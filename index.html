@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/pharmaflow-logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaFlow - Enterprise Pharmacy Automation Platform</title>
+    <meta name="description" content="PharmaFlow - Enterprise pharmacy automation platform. Centrally manage networks of robotic pharmacy branches with full governance, telepharmacy, insurance, and AI-driven intelligence.">
+    <meta name="keywords" content="PharmaFlow, pharmacy automation, robotic pharmacy, enterprise pharmacy, telepharmacy, AI pharmacy, PDM, FutureGate Healthcare">
+    <meta property="og:title" content="PharmaFlow - Enterprise Pharmacy Automation Platform">
+    <meta property="og:description" content="PharmaFlow - Enterprise pharmacy automation platform. Centrally manage networks of robotic pharmacy branches with full governance, telepharmacy, insurance, and AI-driven intelligence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pharmaflow.com/">
+    <meta property="og:image" content="images/pharmaflow-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PharmaFlow - Enterprise Pharmacy Automation Platform">
+    <meta name="twitter:description" content="PharmaFlow - Enterprise pharmacy automation platform. Centrally manage networks of robotic pharmacy branches with full governance, telepharmacy, insurance, and AI-driven intelligence.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0077B6',
+                        accent: '#00B4D8',
+                        dark: '#0B1D33',
+                        darkLight: '#122847',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #0B1D33 0%, #0077B6 100%); }
+        .gradient-overlay { background: linear-gradient(180deg, rgba(11,29,51,0.95) 0%, rgba(0,119,182,0.85) 100%); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00B4D8; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,119,182,0.15); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.open { transform: translateX(0); }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="images/pharmaflow-logo.png" alt="PharmaFlow" class="h-10 w-auto">
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="platform.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Platform</a>
+                    <a href="pdm.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">PharmaFlow PDM&trade;</a>
+                    <a href="ai.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">AI Capabilities</a>
+                    <a href="who-we-serve.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Who We Serve</a>
+                    <a href="proof.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Proof</a>
+                    <a href="newsroom.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Newsroom</a>
+                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-dark font-semibold text-sm rounded-lg transition-colors">Contact</a>
+                </div>
+                <button id="menuBtn" class="lg:hidden text-white p-2">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-dark border-l border-white/10 lg:hidden">
+            <div class="flex justify-end p-4">
+                <button id="closeMenu" class="text-white p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+            </div>
+            <div class="flex flex-col px-6 space-y-4">
+                <a href="index.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Home</a>
+                <a href="platform.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Platform</a>
+                <a href="pdm.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">PharmaFlow PDM&trade;</a>
+                <a href="ai.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">AI Capabilities</a>
+                <a href="who-we-serve.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Who We Serve</a>
+                <a href="proof.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Proof</a>
+                <a href="newsroom.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Newsroom</a>
+                <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center px-4 py-1.5 bg-white/10 border border-white/20 rounded-full mb-8">
+                    <span class="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-white/80 text-sm font-medium">Enterprise Pharmacy Automation</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Enterprise Pharmacy<br>Automation Platform
+                </h1>
+                <p class="text-xl lg:text-2xl text-accent font-medium mb-6">
+                    PharmaFlow manages networks of robotic pharmacy branches, not individual machines.
+                </p>
+                <p class="text-lg text-white/70 max-w-3xl mb-10 leading-relaxed">
+                    PharmaFlow centrally operates a distributed network of mobile robotic pharmacy branches with full governance, telepharmacy, insurance, and AI-driven intelligence.
+                </p>
+                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent/90 text-dark font-bold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20">
+                    Discuss Enterprise Pharmacy Automation
+                    <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What PharmaFlow Does -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">What PharmaFlow Does</h2>
+                <div class="w-16 h-1 bg-accent mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="scroll-reveal bg-gray-50 rounded-2xl p-8 lg:p-10 border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">PharmaFlow Platform</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        A comprehensive, end-to-end pharmacy management and automation platform designed to improve patient safety, optimize pharmacy operations, and enable scalable, enterprise-wide smart pharmacy deployments. Hardware-independent, highly configurable, integrates with HIS, ERP, robotic dispensing systems, and third-party healthcare solutions.
+                    </p>
+                </div>
+                <div class="scroll-reveal bg-gray-50 rounded-2xl p-8 lg:p-10 border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">PharmaFlow PDM&trade;</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        A complete, ready-made robotic pharmacy branch delivered as a turnkey solution&mdash;designed to be deployed, relocated, and centrally governed at enterprise scale. A pharmacy branch that moves&mdash;not a machine that dispenses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Service & PDM Highlight -->
+    <section class="py-20 lg:py-28 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">PharmaFlow PDM&trade;</h2>
+                    <p class="text-xl text-accent font-medium mb-6">Mobile, Turnkey Self-Service Robotic Pharmacy Branch</p>
+                    <p class="text-white/70 leading-relaxed mb-8">
+                        A fully enclosed, steel-structure robotic pharmacy branch. Secure, regulation-ready, deployable indoor or outdoor, relocatable, and centrally operated as part of a unified pharmacy network.
+                    </p>
+                    <a href="pdm.html" class="inline-flex items-center text-accent hover:text-white font-semibold transition-colors">
+                        Learn more about PDM&trade;
+                        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+                <div class="scroll-reveal grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <svg class="w-8 h-8 text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        <h4 class="text-white font-semibold text-sm">Secure &amp; Regulation-Ready</h4>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <svg class="w-8 h-8 text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        <h4 class="text-white font-semibold text-sm">Indoor / Outdoor</h4>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <svg class="w-8 h-8 text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                        <h4 class="text-white font-semibold text-sm">Relocatable</h4>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <svg class="w-8 h-8 text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+                        <h4 class="text-white font-semibold text-sm">Centrally Operated</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Network Management -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Enterprise Network Management</h2>
+                <p class="text-xl text-primary font-medium">One platform. One rule set. One source of truth.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                    <h3 class="text-lg font-bold text-dark mb-2">Network-wide Inventory &amp; Stock Control</h3>
+                    <p class="text-gray-500 text-sm">Real-time visibility and control across all PDM&trade; units in the network.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+                    <h3 class="text-lg font-bold text-dark mb-2">Unified Dispensing Governance</h3>
+                    <p class="text-gray-500 text-sm">Standardized dispensing policies and pharmacist approval workflows across all sites.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+                    <h3 class="text-lg font-bold text-dark mb-2">Telepharmacy Call Center</h3>
+                    <p class="text-gray-500 text-sm">Central patient-pharmacist video call center for counseling and oversight.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>
+                    <h3 class="text-lg font-bold text-dark mb-2">Payments &amp; Financial Transactions</h3>
+                    <p class="text-gray-500 text-sm">Integrated cashless payments with centralized transaction reconciliation.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    <h3 class="text-lg font-bold text-dark mb-2">Insurance Approvals &amp; Claims</h3>
+                    <p class="text-gray-500 text-sm">Real-time eligibility, pre-authorization, claim submission, and rejection management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Capabilities -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center px-3 py-1 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-6">Live Today</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">AI Capabilities</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        PharmaFlow applies operational AI across the entire network to drive efficiency, reduce waste, and improve patient outcomes.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Forecast demand by location &amp; time</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Optimize stock across the network</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Balance queues and robotic utilization</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Predict failed pickups</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Detect abnormal usage patterns</span></li>
+                    </ul>
+                </div>
+                <div class="scroll-reveal bg-dark rounded-2xl p-8 lg:p-10">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-10 h-10 text-accent mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+                        <h3 class="text-white text-xl font-bold">Human-in-the-Loop</h3>
+                    </div>
+                    <p class="text-white/70 text-lg leading-relaxed italic">
+                        &ldquo;AI optimizes operations&mdash;never bypasses governance or pharmacist oversight.&rdquo;
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Who It&rsquo;s For</h2>
+                <div class="w-16 h-1 bg-accent mx-auto"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal">
+                <a href="who-we-serve.html" class="bg-white rounded-xl p-8 border border-gray-200 card-hover text-center group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Ministries &amp; Health Authorities</h3>
+                    <p class="text-gray-500 text-sm">Expand pharmacy access with governance and compliance.</p>
+                </a>
+                <a href="who-we-serve.html" class="bg-white rounded-xl p-8 border border-gray-200 card-hover text-center group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Hospital Networks</h3>
+                    <p class="text-gray-500 text-sm">Unified operations across multiple sites.</p>
+                </a>
+                <a href="who-we-serve.html" class="bg-white rounded-xl p-8 border border-gray-200 card-hover text-center group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Pharmacy Chains</h3>
+                    <p class="text-gray-500 text-sm">Scale operations while maintaining safety.</p>
+                </a>
+                <a href="who-we-serve.html" class="bg-white rounded-xl p-8 border border-gray-200 card-hover text-center group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Digital Health / IT Leaders</h3>
+                    <p class="text-gray-500 text-sm">Vendor-agnostic, open integration, fast rollout.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why PharmaFlow -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Why PharmaFlow</h2>
+                <div class="w-16 h-1 bg-accent mx-auto"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
+                <!-- Patient Safety -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Patient Safety</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Error-free dispensing through barcode verification</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Positive verification at every dispensing step</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Full batch and lot traceability</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Controlled medication governance</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Patient counseling workflows</li>
+                    </ul>
+                </div>
+                <!-- Cost Reduction -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Cost Reduction &amp; Resource Optimization</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Prioritizes near-expiry stock</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Real-time stock tracking and consumption forecasting</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Automated reorder and replenishment</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Hardware-independent, no vendor lock-in</li>
+                    </ul>
+                </div>
+                <!-- Patient Experience -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Patient Experience</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Automated and robotics-optimized dispensing</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>SMS and email notifications</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>e-Refill requests and delivery management</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Digital e-signatures and counseling</li>
+                    </ul>
+                </div>
+                <!-- Automated Workflow -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Automated Workflow Efficiency</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Robotic and non-robotic dispensing in single workflow</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Prescription grouping, queue management, task prioritization</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Real-time visibility into pharmacy workload</li>
+                    </ul>
+                </div>
+                <!-- Compliance -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Compliance, Governance &amp; Audit Readiness</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>End-to-end traceability</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Comprehensive audit trails</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Digital signatures, paperless workflows</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>Regulatory-ready reporting and dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 scroll-reveal">
+                <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Trusted By</p>
+                <h2 class="text-2xl lg:text-3xl font-bold text-dark">Leading Healthcare Institutions</h2>
+            </div>
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 scroll-reveal">
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/mohp-uae.jpg" alt="Ministry of Health and Prevention UAE" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/kfmc.jpg" alt="King Fahad Medical City" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/hamad.jpg" alt="Hamad Medical Corporation" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/pscc.jpg" alt="Prince Sultan Cardiac Center" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/zayed.jpg" alt="Zayed Military Hospital" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/hospital-57357.jpg" alt="Children's Cancer Hospital 57357" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/al-mouwasat.jpg" alt="Al Mouwasat Hospitals" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/fakeeh.jpg" alt="Dr. Soliman Fakeeh Hospital" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/almoosa.jpg" alt="Almoosa Specialist Hospital" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/al-amiri.jpg" alt="Al Amiri Hospital" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/king-fahd-jazan.jpg" alt="King Fahd Central Hospital" class="max-h-14 max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-center h-20"><img src="images/clients/al-kharj.jpg" alt="Al Kharj Military Hospital" class="max-h-14 max-w-full object-contain"></div>
+            </div>
+            <div class="text-center mt-8 scroll-reveal">
+                <a href="proof.html" class="text-primary hover:text-accent font-medium text-sm transition-colors">View all clients &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 lg:py-28 gradient-hero">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Discuss Enterprise Pharmacy Automation</h2>
+            <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+                Enterprise engagement. No demos. No trials. Professional inquiry only.
+            </p>
+            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent/90 text-dark font-bold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20">
+                Discuss Enterprise Pharmacy Automation
+                <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="images/pharmaflow-logo.png" alt="PharmaFlow" class="h-8 w-auto">
+                    </div>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">Enterprise Pharmacy Automation Platform</p>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="images/fghc-logo-white.png" alt="FutureGate Healthcare Solutions" class="h-6 w-auto opacity-70">
+                    </div>
+                    <a href="https://www.linkedin.com" target="_blank" class="inline-flex items-center text-white/50 hover:text-accent transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Platform</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="platform.html" class="text-white/50 hover:text-accent transition-colors">Platform Overview</a></li>
+                        <li><a href="pdm.html" class="text-white/50 hover:text-accent transition-colors">PharmaFlow PDM&trade;</a></li>
+                        <li><a href="ai.html" class="text-white/50 hover:text-accent transition-colors">AI Capabilities</a></li>
+                        <li><a href="who-we-serve.html" class="text-white/50 hover:text-accent transition-colors">Who We Serve</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-white/50 hover:text-accent transition-colors">About PharmaFlow</a></li>
+                        <li><a href="proof.html" class="text-white/50 hover:text-accent transition-colors">Proof</a></li>
+                        <li><a href="newsroom.html" class="text-white/50 hover:text-accent transition-colors">Newsroom</a></li>
+                        <li><a href="#" class="text-white/50 hover:text-accent transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-white/50 hover:text-accent transition-colors">Security &amp; Compliance</a></li>
+                        <li><a href="#" class="text-white/50 hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white/50 hover:text-accent transition-colors">Legal</a></li>
+                        <li><a href="contact.html" class="text-white/50 hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-white/30 text-sm">&copy; 2026 FutureGate Healthcare Solutions. All rights reserved. PharmaFlow&trade; is a trademark of FutureGate Healthcare Solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+        closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+        // Scroll reveal
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
