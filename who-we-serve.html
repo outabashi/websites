@@ -45,36 +45,36 @@
 <body class="bg-white text-gray-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 border-b border-white/10" style="background:#0B1D33">
+    <nav class="fixed top-0 w-full z-50 border-b border-gray-200 shadow-sm" style="background:#ffffff">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-14 w-auto brightness-0 invert">
+                    <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-14 w-auto ">
                 </a>
                 <div class="hidden lg:flex items-center space-x-1">
-                    <a href="index.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="platform.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">PharmaFlow&trade; Platform</a>
-                    <a href="pdm.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">PDM&trade;</a>
-                    <a href="ai.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">AI Capabilities</a>
-                    <a href="who-we-serve.html" class="nav-link text-accent px-3 py-2 text-sm font-medium">Who We Serve</a>
-                    <a href="proof.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Proof</a>
-                    <a href="newsroom.html" class="nav-link text-white/90 hover:text-white px-3 py-2 text-sm font-medium">Newsroom</a>
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="platform.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">PharmaFlow&trade; Platform</a>
+                    <a href="pdm.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">PDM&trade;</a>
+                    <a href="ai.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">AI Capabilities</a>
+                    <a href="who-we-serve.html" class="nav-link text-primary font-semibold px-3 py-2 text-sm">Who We Serve</a>
+                    <a href="proof.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Proof</a>
+                    <a href="newsroom.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Newsroom</a>
                     <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-dark font-semibold text-sm rounded-lg transition-colors">Contact</a>
                 </div>
-                <button id="menuBtn" class="lg:hidden text-white p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <button id="menuBtn" class="lg:hidden text-gray-700 p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </div>
         </div>
         <div id="menuOverlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
-        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full border-l border-white/10 lg:hidden z-50" style="background:#0B1D33">
-            <div class="flex justify-end p-4"><button id="closeMenu" class="text-white p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full border-l border-gray-200 lg:hidden z-50" style="background:#ffffff">
+            <div class="flex justify-end p-4"><button id="closeMenu" class="text-gray-700 p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
             <div class="flex flex-col px-6 space-y-4">
-                <a href="index.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Home</a>
-                <a href="platform.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Platform</a>
-                <a href="pdm.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">PharmaFlow&trade; PDM&trade;</a>
-                <a href="ai.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">AI Capabilities</a>
-                <a href="who-we-serve.html" class="text-accent text-base font-medium py-2 border-b border-white/10">Who We Serve</a>
-                <a href="proof.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Proof</a>
-                <a href="newsroom.html" class="text-white/90 hover:text-accent text-base font-medium py-2 border-b border-white/10">Newsroom</a>
+                <a href="index.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Home</a>
+                <a href="platform.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Platform</a>
+                <a href="pdm.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">PharmaFlow&trade; PDM&trade;</a>
+                <a href="ai.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">AI Capabilities</a>
+                <a href="who-we-serve.html" class="text-primary font-semibold text-base py-2 border-b border-gray-200">Who We Serve</a>
+                <a href="proof.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Proof</a>
+                <a href="newsroom.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Newsroom</a>
                 <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg">Contact</a>
             </div>
         </div>
@@ -220,7 +220,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div>
                     <div class="flex items-center space-x-2 mb-6">
-                        <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-12 w-auto brightness-0 invert">
+                        <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-12 w-auto ">
                     </div>
                     <p class="text-white/50 text-sm leading-relaxed mb-2">The Digital Backbone of Automated Pharmacy Operations</p>
                     <div class="mb-4">
