@@ -46,6 +46,11 @@
         .nav-link:hover::after { width: 100%; }
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,119,182,0.15); }
+        .nav-logo { transition: transform 0.3s ease, filter 0.3s ease; }
+        .nav-logo:hover { transform: scale(1.05); filter: drop-shadow(0 0 8px rgba(0,119,182,0.5)); }
+        @keyframes logoShimmer { 0%,100% { filter: drop-shadow(0 0 2px rgba(0,119,182,0.2)); } 50% { filter: drop-shadow(0 0 10px rgba(0,119,182,0.4)); } }
+        .nav-logo { animation: logoShimmer 3s ease-in-out infinite; }
+        .nav-logo:hover { animation: none; }
         .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
         .mobile-menu.open { transform: translateX(0); }
         .logo-scroll-container { overflow: hidden; width: 100%; }
@@ -62,7 +67,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-14 w-auto ">
+                    <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-20 w-auto nav-logo">
                 </a>
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
