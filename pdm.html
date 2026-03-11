@@ -22,7 +22,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: '#0077B6', accent: '#00B4D8', dark: '#0B1D33', darkLight: '#122847' },
+                    colors: { primary: '#0077B6', accent: '#00B4D8', navy: '#0B1D33', darkLight: '#122847' },
                     fontFamily: { inter: ['Inter', 'sans-serif'] }
                 }
             }
@@ -59,14 +59,20 @@
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
                     <a href="platform.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">PharmaFlow&trade; Platform</a>
-                    <a href="pdm.html" class="nav-link text-primary font-semibold px-3 py-2 text-sm">PDM&trade;</a>
-                    <a href="erx.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">eRx Solution</a>
-                    <a href="inpatient.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Inpatient</a>
+                    <div class="relative group">
+                        <button class="nav-link text-primary font-semibold px-3 py-2 text-sm inline-flex items-center">Solutions<svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg py-1">
+                                <a href="inpatient.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:text-primary hover:bg-gray-50">Inpatient Pharmacy Management</a>
+                                <a href="pdm.html" class="block px-4 py-2.5 text-sm text-primary font-semibold bg-gray-50">PharmaFlow&trade; PDM&trade;</a>
+                                <a href="erx.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:text-primary hover:bg-gray-50">eRx Solution</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="ai.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">AI Capabilities</a>
-                    <a href="who-we-serve.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Who We Serve</a>
-                    <a href="proof.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Proof</a>
+                    <a href="proof.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Customer Success</a>
                     <a href="newsroom.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Newsroom</a>
-                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-dark font-semibold text-sm rounded-lg transition-colors">Contact</a>
+                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-navy font-semibold text-sm rounded-lg transition-colors">Contact</a>
                 </div>
                 <button id="menuBtn" class="lg:hidden text-gray-700 p-2">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -79,21 +85,25 @@
             <div class="flex flex-col px-6 space-y-4">
                 <a href="index.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Home</a>
                 <a href="platform.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Platform</a>
-                <a href="pdm.html" class="text-primary font-semibold text-base py-2 border-b border-gray-200">PharmaFlow&trade; PDM&trade;</a>
-                <a href="erx.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">eRx Solution</a>
-                <a href="inpatient.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Inpatient</a>
+                <div class="py-2 border-b border-gray-200">
+                    <p class="text-primary text-base font-semibold">Solutions</p>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="inpatient.html" class="block text-gray-500 hover:text-primary text-sm">Inpatient Pharmacy Management</a>
+                        <a href="pdm.html" class="block text-primary font-semibold text-sm">PharmaFlow&trade; PDM&trade;</a>
+                        <a href="erx.html" class="block text-gray-500 hover:text-primary text-sm">eRx Solution</a>
+                    </div>
+                </div>
                 <a href="ai.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">AI Capabilities</a>
-                <a href="who-we-serve.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Who We Serve</a>
-                <a href="proof.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Proof</a>
+                <a href="proof.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Customer Success</a>
                 <a href="newsroom.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Newsroom</a>
-                <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg">Contact</a>
+                <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-accent hover:bg-accent/90 text-navy font-semibold rounded-lg">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="gradient-hero pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
             <div class="max-w-4xl">
                 <div class="inline-flex items-center px-4 py-1.5 bg-white/10 border border-white/20 rounded-full mb-8">
                     <span class="text-white/80 text-sm font-medium">Turnkey Robotic Pharmacy Branch</span>
@@ -108,12 +118,28 @@
         </div>
     </section>
 
+    <!-- Anchor Navigation -->
+    <div class="sticky top-16 lg:top-20 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex overflow-x-auto space-x-6 py-3 text-sm font-medium no-scrollbar">
+                <a href="#what-pdm-is" class="text-gray-500 whitespace-nowrap hover:text-primary">What PDM Is</a>
+                <a href="#drive-thru" class="text-gray-500 whitespace-nowrap hover:text-primary">Drive-Thru</a>
+                <a href="#strategic-value" class="text-gray-500 whitespace-nowrap hover:text-primary">Strategic Value</a>
+                <a href="#workflows" class="text-gray-500 whitespace-nowrap hover:text-primary">Workflows</a>
+                <a href="#telepharmacy" class="text-gray-500 whitespace-nowrap hover:text-primary">Telepharmacy</a>
+                <a href="#network" class="text-gray-500 whitespace-nowrap hover:text-primary">Network</a>
+                <a href="#deployment" class="text-gray-500 whitespace-nowrap hover:text-primary">Deployment</a>
+                <a href="#comparison" class="text-gray-500 whitespace-nowrap hover:text-primary">Comparison</a>
+            </div>
+        </div>
+    </div>
+
     <!-- What PDM Is -->
-    <section class="py-12 lg:py-16 bg-white">
+    <section id="what-pdm-is" class="py-8 lg:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center scroll-reveal">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">What PharmaFlow&trade; PDM&trade; Is</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-6">What PharmaFlow&trade; PDM&trade; Is</h2>
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
                         A fully enclosed, steel-structure robotic pharmacy branch, professionally designed and governed by the PharmaFlow&trade; platform.
                     </p>
@@ -125,7 +151,7 @@
                         <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Located in public locations, accessible 24/7</span></li>
                         <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Supports drive-thru model</span></li>
                     </ul>
-                    <div class="bg-dark rounded-xl p-6">
+                    <div class="bg-navy rounded-xl p-6">
                         <p class="text-white text-lg font-semibold italic">&ldquo;A pharmacy branch that moves&mdash;not a machine that dispenses.&rdquo;</p>
                     </div>
                 </div>
@@ -136,59 +162,8 @@
         </div>
     </section>
 
-    <!-- Three Native Workflows -->
-    <section class="py-12 lg:py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Three Native Workflows</h2>
-                <p class="text-primary font-medium text-lg">One Governed Model</p>
-                <div class="w-16 h-1 bg-accent mx-auto mt-4"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 scroll-reveal">
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 card-hover">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-primary font-bold text-xl">01</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">e-Prescription (e-RX) Dispensing</h3>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>HIS / national e-RX integration</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Pharmacist validation</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Full audit trail</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 card-hover">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-primary font-bold text-xl">02</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">OTC Dispensing</h3>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Rules-based eligibility</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Controlled product catalogs</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Central monitoring</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 card-hover">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-primary font-bold text-xl">03</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">Prepaid / eCommerce Pickup</h3>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Secure authentication</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Time-window enforcement</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Automated handling of uncollected orders</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-10 text-center scroll-reveal">
-                <div class="inline-flex items-center bg-primary/5 border border-primary/20 rounded-xl px-6 py-3">
-                    <p class="text-primary font-medium italic">&ldquo;All workflows run under one governance model.&rdquo;</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Drive-Thru Support -->
-    <section class="py-12 lg:py-16 bg-dark">
+    <section id="drive-thru" class="py-8 lg:py-12 bg-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center scroll-reveal">
                 <div>
@@ -204,187 +179,227 @@
         </div>
     </section>
 
-    <!-- Service Offerings -->
-    <section class="py-12 lg:py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Innovative Service Offerings</h2>
-                <p class="text-gray-500 text-lg">Three integrated service models powered by the PDM&trade; network</p>
-                <div class="w-16 h-1 bg-accent mx-auto mt-4"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 scroll-reveal">
-                <!-- PDM Network -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
-                    <div class="flex justify-center mb-6">
-                        <img src="images/pdm/fulfillment.png" alt="Medication Refill & Dispensing" class="h-32 w-auto rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">Medication Refill Dispensing &amp; Delivery</h3>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Provide a convenient way to dispense and deliver medications to patients</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Located in public locations, accessible 24/7, with drive-thru support</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Fulfillment and distribution center to supply the network and package prescriptions for home delivery</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Easy to use with convenient self-service experience</li>
-                    </ul>
-                </div>
-                <!-- Home Delivery -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
-                    <div class="flex justify-center mb-6">
-                        <img src="images/pdm/delivery.jpg" alt="Home Delivery" class="h-32 w-auto rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">Home Delivery</h3>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Medications delivered directly and safely to a patient&rsquo;s home</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Bypassing the need to visit the hospital or pharmacy</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Targeting high-volume delivery operations per year</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Verify, dispense, and package prescriptions for delivery from a centralized fulfillment center</li>
-                    </ul>
-                </div>
-                <!-- Patient Engagement -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 card-hover">
-                    <div class="flex justify-center mb-6">
-                        <img src="images/pdm/video-counseling.png" alt="Patient Engagement & Telepharmacy" class="h-32 w-auto rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">Patient Engagement</h3>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><strong class="font-semibold text-dark">Counseling:</strong> Providing vital information, advice, and assistance to enhance the patient&rsquo;s understanding of their illness and treatment</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><strong class="font-semibold text-dark">Education:</strong> Help patients understand what medications they are taking and why, how and when to take them, and recognize side effects</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><strong class="font-semibold text-dark">Follow-up:</strong> Routine follow-up of patients with chronic disease. Regular monitoring and Rx-Refill approvals via telehealth platform</li>
-                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Improve adherence and therapeutic outcomes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Patient Journey -->
-    <section class="py-12 lg:py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Patient Journey</h2>
-                <p class="text-gray-500 text-lg">From e-Prescription to medication in hand&mdash;simple, safe, and fast</p>
-                <div class="w-16 h-1 bg-accent mx-auto mt-4"></div>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 scroll-reveal">
-                <div class="bg-white rounded-xl p-5 border border-gray-200 text-center card-hover">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">1</div>
-                    <p class="text-dark font-semibold text-sm">e-Prescription</p>
-                    <p class="text-gray-400 text-xs mt-1">Ready to dispense</p>
-                </div>
-                <div class="bg-white rounded-xl p-5 border border-gray-200 text-center card-hover">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">2</div>
-                    <p class="text-dark font-semibold text-sm">Scan RX Barcode</p>
-                    <p class="text-gray-400 text-xs mt-1">At PDM&trade; kiosk</p>
-                </div>
-                <div class="bg-white rounded-xl p-5 border border-gray-200 text-center card-hover">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">3</div>
-                    <p class="text-dark font-semibold text-sm">Stock Reservation</p>
-                    <p class="text-gray-400 text-xs mt-1">Automatic &amp; instant</p>
-                </div>
-                <div class="bg-white rounded-xl p-5 border border-gray-200 text-center card-hover">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">4</div>
-                    <p class="text-dark font-semibold text-sm">Video Counseling</p>
-                    <p class="text-gray-400 text-xs mt-1">Telepharmacy session</p>
-                </div>
-                <div class="bg-white rounded-xl p-5 border border-gray-200 text-center card-hover">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">5</div>
-                    <p class="text-dark font-semibold text-sm">Payment</p>
-                    <p class="text-gray-400 text-xs mt-1">If applicable</p>
-                </div>
-                <div class="bg-white rounded-xl p-5 border border-gray-200 text-center card-hover">
-                    <div class="w-10 h-10 bg-accent text-dark rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">6</div>
-                    <p class="text-dark font-semibold text-sm">Dispensing</p>
-                    <p class="text-gray-400 text-xs mt-1">With RX instructions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Strategic Value -->
-    <section class="py-12 lg:py-16 bg-white">
+    <section id="strategic-value" class="py-8 lg:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Strategic Benefits of the Solution</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Strategic Benefits of the Solution</h2>
                 <div class="w-16 h-1 bg-accent mx-auto"></div>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 scroll-reveal">
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">24/7 Services</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">24/7 Services</h4>
                     <p class="text-gray-500 text-sm flex-1">Round-the-clock medication access without pharmacy staff presence</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Enhanced Patient Experience</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Enhanced Patient Experience</h4>
                     <p class="text-gray-500 text-sm flex-1">Low-hassle, speedy process for medication access. Reduce waiting times, cover larger geographical areas, and solve parking issues</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Patient Safety</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Patient Safety</h4>
                     <p class="text-gray-500 text-sm flex-1">Enhance workflow efficiency, simplify processes, and improve protection for pharmacy staff and patients through infection control</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Resources Optimization</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Resources Optimization</h4>
                     <p class="text-gray-500 text-sm flex-1">Reduce number of staff, reduce inventory cost, and reduce medication waste across the network</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Enterprise Support</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Enterprise Support</h4>
                     <p class="text-gray-500 text-sm flex-1">Central management, scalability, and management dashboards across the entire network</p>
                 </div>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-6 scroll-reveal">
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Automated Inventory Management</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Automated Inventory Management</h4>
                     <p class="text-gray-500 text-sm flex-1">Inventory control, minimum-level ordering, reducing waste, and ensuring stock availability</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Increase Revenue &amp; Outreach</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Increase Revenue &amp; Outreach</h4>
                     <p class="text-gray-500 text-sm flex-1">New revenue generators through self-service pharmacies and expanded service outreach to underserved areas</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Cost Effective</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Cost Effective</h4>
                     <p class="text-gray-500 text-sm flex-1">Reduce operation costs, optimize staffing, and lower inventory expenses across the pharmacy network</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">National Integration</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">National Integration</h4>
                     <p class="text-gray-500 text-sm flex-1">Integration with national platforms across GCC countries&mdash;track and trace, insurance, e-Prescription, and medication coding systems</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover flex flex-col">
                     <svg class="w-10 h-10 text-primary mx-auto mb-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
-                    <h4 class="text-dark font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Brand Positioning</h4>
+                    <h4 class="text-navy font-bold mb-2 min-h-[2.5rem] flex items-center justify-center">Brand Positioning</h4>
                     <p class="text-gray-500 text-sm flex-1">First-of-its-kind model positioning the organization as a leader in pharmacy automation and patient care</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Central Governance -->
-    <section class="py-12 lg:py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
-            <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">Central Governance via PharmaFlow&trade;</h2>
-            <div class="w-16 h-1 bg-accent mx-auto mb-8"></div>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Every PharmaFlow&trade; PDM&trade; is centrally managed as part of a unified pharmacy network through the PharmaFlow&trade; platform. Inventory, dispensing, telepharmacy, payments, insurance, and reporting&mdash;all governed from a single control layer.
-            </p>
+    <!-- Three Native Workflows -->
+    <section id="workflows" class="py-8 lg:py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Three Native Workflows</h2>
+                <p class="text-primary font-medium text-lg">One Governed Model</p>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 scroll-reveal">
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-primary font-bold text-xl">01</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-4">e-Prescription (e-RX) Dispensing</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>HIS / national e-RX integration</li>
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Pharmacist validation</li>
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Full audit trail</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-primary font-bold text-xl">02</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-4">OTC Dispensing</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Rules-based eligibility</li>
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Controlled product catalogs</li>
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Central monitoring</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-primary font-bold text-xl">03</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-4">Prepaid / eCommerce Pickup</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Secure authentication</li>
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Time-window enforcement</li>
+                        <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Automated handling of uncollected orders</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 text-center scroll-reveal">
+                <div class="inline-flex items-center bg-primary/5 border border-primary/20 rounded-xl px-6 py-3">
+                    <p class="text-primary font-medium italic">&ldquo;All workflows run under one governance model.&rdquo;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telepharmacy Call Center -->
+    <section id="telepharmacy" class="py-8 lg:py-12 bg-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center scroll-reveal">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Telepharmacy Call Center</h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8">Built-in telepharmacy call center enabling real-time patient-pharmacist interaction across all PDM&trade; units.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-white/80">Patients initiate video calls directly from PDM&trade;</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-white/80">Licensed pharmacists provide counseling, OTC guidance, clarifications</span></li>
+                        <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-white/80">All interactions logged and auditable</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-10">
+                    <svg class="w-12 h-12 text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+                    <p class="text-white text-xl font-semibold italic">&ldquo;Self-service with human access, not isolation.&rdquo;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Network Management -->
+    <section id="network" class="py-8 lg:py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Enterprise Management of the Robotic Pharmacy Network</h2>
+                <p class="text-xl text-primary font-medium">One platform. One rule set. One source of truth.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                    <h3 class="text-lg font-bold text-navy mb-2">Network-wide Inventory &amp; Stock Control</h3>
+                    <p class="text-gray-500 text-sm">Real-time visibility and control across all PDM&trade; units in the network.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+                    <h3 class="text-lg font-bold text-navy mb-2">Unified Dispensing Governance</h3>
+                    <p class="text-gray-500 text-sm">Standardized dispensing policies and pharmacist approval workflows across all sites.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+                    <h3 class="text-lg font-bold text-navy mb-2">Telepharmacy Call Center</h3>
+                    <p class="text-gray-500 text-sm">Central patient-pharmacist video call center for counseling and oversight.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>
+                    <h3 class="text-lg font-bold text-navy mb-2">Payments &amp; Financial Transactions</h3>
+                    <p class="text-gray-500 text-sm">Integrated cashless payments with centralized transaction reconciliation.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 card-hover">
+                    <svg class="w-10 h-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    <h3 class="text-lg font-bold text-navy mb-2">Insurance Approvals &amp; Claims</h3>
+                    <p class="text-gray-500 text-sm">Real-time eligibility, pre-authorization, claim submission, and rejection management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Scenarios -->
+    <section id="deployment" class="py-8 lg:py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Deployment Scenarios</h2>
+                <div class="w-16 h-1 bg-accent mx-auto"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 scroll-reveal">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
+                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                    <h4 class="text-navy font-semibold text-sm">Indoor</h4>
+                    <p class="text-gray-400 text-xs mt-1">Hospital lobbies, malls</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
+                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
+                    <h4 class="text-navy font-semibold text-sm">Outdoor</h4>
+                    <p class="text-gray-400 text-xs mt-1">Parking, campuses</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
+                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                    <h4 class="text-navy font-semibold text-sm">Drive-Thru</h4>
+                    <p class="text-gray-400 text-xs mt-1">Vehicle access</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
+                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+                    <h4 class="text-navy font-semibold text-sm">Hospital Campus</h4>
+                    <p class="text-gray-400 text-xs mt-1">Multi-building</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
+                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                    <h4 class="text-navy font-semibold text-sm">Remote Locations</h4>
+                    <p class="text-gray-400 text-xs mt-1">Underserved areas</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Comparison Table -->
-    <section class="py-12 lg:py-16 bg-gray-50">
+    <section id="comparison" class="py-8 lg:py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">How PDM&trade; Compares</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">How PDM&trade; Compares</h2>
                 <div class="w-16 h-1 bg-accent mx-auto"></div>
             </div>
             <div class="overflow-x-auto scroll-reveal">
                 <table class="w-full bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200">
                     <thead>
-                        <tr class="bg-dark text-white">
+                        <tr class="bg-navy text-white">
                             <th class="text-left py-5 px-6 font-semibold text-sm">Capability</th>
                             <th class="text-center py-5 px-6 font-semibold text-sm bg-primary">PharmaFlow&trade; PDM&trade;</th>
                             <th class="text-center py-5 px-6 font-semibold text-sm">Kiosk</th>
@@ -393,67 +408,67 @@
                     </thead>
                     <tbody class="divide-y divide-gray-100">
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Complete pharmacy branch</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Complete pharmacy branch</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Steel structure &amp; enclosure</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Steel structure &amp; enclosure</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Mobile &amp; relocatable</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Mobile &amp; relocatable</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Central network management</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Central network management</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Telepharmacy video calls</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Telepharmacy video calls</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Insurance &amp; claims</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Insurance &amp; claims</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><span class="text-yellow-500 font-bold text-lg">~</span></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">AI-driven optimization</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">AI-driven optimization</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">24/7 availability</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">24/7 availability</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Home delivery support</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Home delivery support</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Patient engagement &amp; counseling</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Patient engagement &amp; counseling</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                         </tr>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-4 px-6 text-sm font-medium text-dark">Enterprise-ready</td>
+                            <td class="py-4 px-6 text-sm font-medium text-navy">Enterprise-ready</td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
                             <td class="py-4 px-6 text-center"><svg class="w-6 h-6 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></td>
@@ -464,49 +479,12 @@
         </div>
     </section>
 
-    <!-- Deployment Scenarios -->
-    <section class="py-12 lg:py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Deployment Scenarios</h2>
-                <div class="w-16 h-1 bg-accent mx-auto"></div>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 scroll-reveal">
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
-                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
-                    <h4 class="text-dark font-semibold text-sm">Indoor</h4>
-                    <p class="text-gray-400 text-xs mt-1">Hospital lobbies, malls</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
-                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
-                    <h4 class="text-dark font-semibold text-sm">Outdoor</h4>
-                    <p class="text-gray-400 text-xs mt-1">Parking, campuses</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
-                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
-                    <h4 class="text-dark font-semibold text-sm">Drive-Thru</h4>
-                    <p class="text-gray-400 text-xs mt-1">Vehicle access</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
-                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
-                    <h4 class="text-dark font-semibold text-sm">Hospital Campus</h4>
-                    <p class="text-gray-400 text-xs mt-1">Multi-building</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-center card-hover">
-                    <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                    <h4 class="text-dark font-semibold text-sm">Remote Locations</h4>
-                    <p class="text-gray-400 text-xs mt-1">Underserved areas</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA -->
-    <section class="py-12 lg:py-16 gradient-hero">
+    <section class="py-8 lg:py-12 gradient-hero">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
             <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Make Your Pharmacy Smarter. Automated. Future-Ready.</h2>
             <p class="text-white/70 text-lg mb-10">Enterprise engagement. Professional inquiry only.</p>
-            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent/90 text-dark font-bold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20">
+            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent/90 text-navy font-bold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20">
                 Make Your Pharmacy Smarter. Automated. Future-Ready.
                 <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -514,17 +492,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark border-t border-white/10">
+    <footer class="bg-navy border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div>
                     <div class="flex items-center space-x-2 mb-6">
                         <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-16 w-auto ">
                     </div>
-                    <p class="text-white/50 text-sm leading-relaxed mb-2">The Digital Backbone of Automated Pharmacy Operations</p>
+                    <p class="text-white/50 text-sm leading-relaxed mb-2">The Digital Backbone Behind Every Pharmacy Workflow</p>
                     <div class="mb-4">
                         <p class="text-white/40 text-xs mb-2">Developed by</p>
-                        <div class="overflow-hidden" style="width:195px"><img src="images/fgs-logo-hires.png" alt="FutureGate Software" class="h-20 max-w-none opacity-80" style="filter:grayscale(1) contrast(3) invert(1);mix-blend-mode:screen"></div>
+                        <img src="images/fgs-logo-hires.png" alt="FutureGate Software" class="h-20 opacity-80" style="width:195px;filter:brightness(0) invert(1)">
                     </div>
                     <a href="https://www.linkedin.com" target="_blank" class="inline-flex items-center text-white/50 hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                 </div>
@@ -534,16 +512,15 @@
                         <li><a href="platform.html" class="text-white/50 hover:text-accent transition-colors">Platform Overview</a></li>
                         <li><a href="pdm.html" class="text-white/50 hover:text-accent transition-colors">PDM&trade;</a></li>
                         <li><a href="erx.html" class="text-white/50 hover:text-accent transition-colors">eRx Solution</a></li>
-                        <li><a href="inpatient.html" class="text-white/50 hover:text-accent transition-colors">Inpatient</a></li>
+                        <li><a href="inpatient.html" class="text-white/50 hover:text-accent transition-colors">Inpatient Pharmacy Management</a></li>
                         <li><a href="ai.html" class="text-white/50 hover:text-accent transition-colors">AI Capabilities</a></li>
-                        <li><a href="who-we-serve.html" class="text-white/50 hover:text-accent transition-colors">Who We Serve</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
                     <ul class="space-y-3 text-sm">
                         <li><a href="#" class="text-white/50 hover:text-accent transition-colors">About</a></li>
-                        <li><a href="proof.html" class="text-white/50 hover:text-accent transition-colors">Proof</a></li>
+                        <li><a href="proof.html" class="text-white/50 hover:text-accent transition-colors">Customer Success</a></li>
                         <li><a href="newsroom.html" class="text-white/50 hover:text-accent transition-colors">Newsroom</a></li>
                         <li><a href="#" class="text-white/50 hover:text-accent transition-colors">Careers</a></li>
                     </ul>

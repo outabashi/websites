@@ -22,7 +22,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: '#0077B6', accent: '#00B4D8', dark: '#0B1D33', darkLight: '#122847' },
+                    colors: { primary: '#0077B6', accent: '#00B4D8', navy: '#0B1D33', darkLight: '#122847' },
                     fontFamily: { inter: ['Inter', 'sans-serif'] }
                 }
             }
@@ -59,14 +59,20 @@
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
                     <a href="platform.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">PharmaFlow&trade; Platform</a>
-                    <a href="pdm.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">PDM&trade;</a>
-                    <a href="erx.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">eRx Solution</a>
-                    <a href="inpatient.html" class="nav-link text-primary font-semibold px-3 py-2 text-sm">Inpatient</a>
+                    <div class="relative group">
+                        <button class="nav-link text-primary font-semibold px-3 py-2 text-sm inline-flex items-center">Solutions<svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg py-1">
+                                <a href="inpatient.html" class="block px-4 py-2.5 text-sm text-primary font-semibold bg-gray-50">Inpatient Pharmacy Management</a>
+                                <a href="pdm.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:text-primary hover:bg-gray-50">PharmaFlow&trade; PDM&trade;</a>
+                                <a href="erx.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:text-primary hover:bg-gray-50">eRx Solution</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="ai.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">AI Capabilities</a>
-                    <a href="who-we-serve.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Who We Serve</a>
-                    <a href="proof.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Proof</a>
+                    <a href="proof.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Customer Success</a>
                     <a href="newsroom.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Newsroom</a>
-                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-dark font-semibold text-sm rounded-lg transition-colors">Contact</a>
+                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-navy font-semibold text-sm rounded-lg transition-colors">Contact</a>
                 </div>
                 <button id="menuBtn" class="lg:hidden text-gray-700 p-2">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -79,21 +85,25 @@
             <div class="flex flex-col px-6 space-y-4">
                 <a href="index.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Home</a>
                 <a href="platform.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Platform</a>
-                <a href="pdm.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">PDM&trade;</a>
-                <a href="erx.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">eRx Solution</a>
-                <a href="inpatient.html" class="text-primary font-semibold text-base py-2 border-b border-gray-200">Inpatient</a>
+                <div class="py-2 border-b border-gray-200">
+                    <p class="text-primary text-base font-semibold">Solutions</p>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="inpatient.html" class="block text-primary font-semibold text-sm">Inpatient Pharmacy Management</a>
+                        <a href="pdm.html" class="block text-gray-500 hover:text-primary text-sm">PharmaFlow&trade; PDM&trade;</a>
+                        <a href="erx.html" class="block text-gray-500 hover:text-primary text-sm">eRx Solution</a>
+                    </div>
+                </div>
                 <a href="ai.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">AI Capabilities</a>
-                <a href="who-we-serve.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Who We Serve</a>
-                <a href="proof.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Proof</a>
+                <a href="proof.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Customer Success</a>
                 <a href="newsroom.html" class="text-gray-700 hover:text-primary text-base font-medium py-2 border-b border-gray-200">Newsroom</a>
-                <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg">Contact</a>
+                <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-accent hover:bg-accent/90 text-navy font-semibold rounded-lg">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="gradient-hero pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
             <div class="max-w-4xl">
                 <div class="inline-flex items-center px-4 py-1.5 bg-white/10 border border-white/20 rounded-full mb-8">
                     <span class="text-white/80 text-sm font-medium">Inpatient &amp; Central Pharmacy Solution</span>
@@ -118,43 +128,44 @@
                 <a href="#inventory" class="text-gray-500 whitespace-nowrap hover:text-primary">Ward Inventory</a>
                 <a href="#adc" class="text-gray-500 whitespace-nowrap hover:text-primary">ADC Integration</a>
                 <a href="#dashboard" class="text-gray-500 whitespace-nowrap hover:text-primary">Dashboard</a>
+                <a href="#accreditation" class="text-gray-500 whitespace-nowrap hover:text-primary">Accreditation</a>
             </div>
         </div>
     </div>
 
     <!-- Overview -->
-    <section id="overview" class="py-12 lg:py-16 bg-white">
+    <section id="overview" class="py-8 lg:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center scroll-reveal">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">The Inpatient Medication Lifecycle</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-6">The Inpatient Medication Lifecycle</h2>
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
                         PharmaFlow&trade; Inpatient manages every step of the inpatient medication workflow&mdash;giving pharmacists, nurses, and supervisors full visibility and control from central pharmacy to patient bedside.
                     </p>
                     <div class="grid grid-cols-2 gap-3">
                         <a href="#orders" class="flex items-center space-x-3 bg-gray-50 rounded-lg p-3 border border-gray-100 hover:border-primary/30 transition-colors">
                             <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg></div>
-                            <span class="text-dark font-medium text-sm">Orders &amp; Verification</span>
+                            <span class="text-navy font-medium text-sm">Orders &amp; Verification</span>
                         </a>
                         <a href="#dispensing" class="flex items-center space-x-3 bg-gray-50 rounded-lg p-3 border border-gray-100 hover:border-primary/30 transition-colors">
                             <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg></div>
-                            <span class="text-dark font-medium text-sm">Dispensing &amp; Preparation</span>
+                            <span class="text-navy font-medium text-sm">Dispensing &amp; Preparation</span>
                         </a>
                         <a href="#delivery" class="flex items-center space-x-3 bg-gray-50 rounded-lg p-3 border border-gray-100 hover:border-primary/30 transition-colors">
                             <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg></div>
-                            <span class="text-dark font-medium text-sm">Delivery &amp; Administration</span>
+                            <span class="text-navy font-medium text-sm">Delivery &amp; Administration</span>
                         </a>
                         <a href="#inventory" class="flex items-center space-x-3 bg-gray-50 rounded-lg p-3 border border-gray-100 hover:border-primary/30 transition-colors">
                             <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg></div>
-                            <span class="text-dark font-medium text-sm">Ward Inventory</span>
+                            <span class="text-navy font-medium text-sm">Ward Inventory</span>
                         </a>
                         <a href="#adc" class="flex items-center space-x-3 bg-gray-50 rounded-lg p-3 border border-gray-100 hover:border-primary/30 transition-colors">
                             <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"/></svg></div>
-                            <span class="text-dark font-medium text-sm">ADC Integration</span>
+                            <span class="text-navy font-medium text-sm">ADC Integration</span>
                         </a>
                         <a href="#dashboard" class="flex items-center space-x-3 bg-gray-50 rounded-lg p-3 border border-gray-100 hover:border-primary/30 transition-colors">
                             <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg></div>
-                            <span class="text-dark font-medium text-sm">Dashboard &amp; Reporting</span>
+                            <span class="text-navy font-medium text-sm">Dashboard &amp; Reporting</span>
                         </a>
                     </div>
                 </div>
@@ -188,21 +199,21 @@
     </section>
 
     <!-- Orders & Clinical Verification -->
-    <section id="orders" class="py-12 lg:py-16 bg-gray-50">
+    <section id="orders" class="py-8 lg:py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center scroll-reveal">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">Rx Order Management &amp; Clinical Verification</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-6">Rx Order Management &amp; Clinical Verification</h2>
                     <p class="text-gray-600 leading-relaxed mb-6">
                         Full inpatient prescription order management with integrated clinical verification. Pharmacists can verify single or multiple orders efficiently, communicate directly with prescribers, and ensure patient safety before dispensing.
                     </p>
-                    <h4 class="text-dark font-semibold mb-3">Order Capabilities</h4>
+                    <h4 class="text-navy font-semibold mb-3">Order Capabilities</h4>
                     <ul class="space-y-3 mb-6">
                         <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Normal and IV inpatient Rx orders with urgent priority support</span></li>
                         <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Modify, cancel, discontinue, hold, and reactivate orders</span></li>
                         <li class="flex items-start"><svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-gray-700">Orders from PharmaFlow or received from HIS system</span></li>
                     </ul>
-                    <h4 class="text-dark font-semibold mb-3">Clinical Verification</h4>
+                    <h4 class="text-navy font-semibold mb-3">Clinical Verification</h4>
                     <ul class="space-y-3">
                         <li class="flex items-start"><svg class="w-5 h-5 text-red-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg><span class="text-gray-700">Batch verification for single or multiple Rx orders</span></li>
                         <li class="flex items-start"><svg class="w-5 h-5 text-red-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg><span class="text-gray-700">Duplicate medication alerts for patient safety</span></li>
@@ -214,21 +225,21 @@
                     <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                         <div class="flex items-center space-x-3 mb-3">
                             <div class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
-                            <h4 class="text-dark font-semibold text-sm">Patient Profiles</h4>
+                            <h4 class="text-navy font-semibold text-sm">Patient Profiles</h4>
                         </div>
                         <p class="text-gray-500 text-sm">Complete patient view with active Rx orders, current ward, room, and bed assignment. Access medication history for informed decision-making.</p>
                     </div>
                     <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                         <div class="flex items-center space-x-3 mb-3">
                             <div class="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center"><svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
-                            <h4 class="text-dark font-semibold text-sm">HIS-Originated Orders</h4>
+                            <h4 class="text-navy font-semibold text-sm">HIS-Originated Orders</h4>
                         </div>
                         <p class="text-gray-500 text-sm">Seamlessly receive and process Rx orders originated from the hospital&rsquo;s HIS system alongside orders created directly in PharmaFlow.</p>
                     </div>
                     <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                         <div class="flex items-center space-x-3 mb-3">
                             <div class="w-8 h-8 bg-purple-500/10 rounded-lg flex items-center justify-center"><svg class="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg></div>
-                            <h4 class="text-dark font-semibold text-sm">Priority Handling</h4>
+                            <h4 class="text-navy font-semibold text-sm">Priority Handling</h4>
                         </div>
                         <p class="text-gray-500 text-sm">Urgent orders are flagged and fast-tracked through verification and dispensing, ensuring critical medications reach patients without delay.</p>
                     </div>
@@ -238,7 +249,7 @@
     </section>
 
     <!-- Dispensing & Preparation -->
-    <section id="dispensing" class="py-12 lg:py-16 bg-white">
+    <section id="dispensing" class="py-8 lg:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center scroll-reveal">
                 <div class="bg-gradient-to-br from-dark to-primary rounded-2xl p-8 lg:p-10 order-2 lg:order-1">
@@ -271,7 +282,7 @@
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">Dispensing &amp; Medication Preparation</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-6">Dispensing &amp; Medication Preparation</h2>
                     <p class="text-gray-600 leading-relaxed mb-6">
                         Pharmacists dispense verified orders from multiple pharmacy locations based on availability and working hours. The preparation workflow generates structured worklists and prints medication labels with 2D barcodes&mdash;essential for accurate bedside medication verification.
                     </p>
@@ -284,7 +295,7 @@
                                 <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
                             </div>
                             <div>
-                                <h4 class="text-dark font-bold text-sm mb-1">Cycle Fill &mdash; Automated Dose Calculation</h4>
+                                <h4 class="text-navy font-bold text-sm mb-1">Cycle Fill &mdash; Automated Dose Calculation</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed">The system automatically calculates all required doses for every active order across all wards and generates dispense records for them. This eliminates manual dose counting and order-by-order processing, allowing pharmacists in the central or inpatient pharmacy to focus on clinical tasks instead of repetitive dispensing calculations.</p>
                             </div>
                         </div>
@@ -295,10 +306,10 @@
     </section>
 
     <!-- Ward Delivery & Administration -->
-    <section id="delivery" class="py-12 lg:py-16 bg-gray-50">
+    <section id="delivery" class="py-8 lg:py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Ward Delivery &amp; Medication Administration</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Ward Delivery &amp; Medication Administration</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Secure medication transfer from pharmacy to ward, followed by tracked bedside administration by nursing staff.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 scroll-reveal">
@@ -306,7 +317,7 @@
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">Ward Delivery</h3>
+                    <h3 class="text-xl font-bold text-navy mb-4">Ward Delivery</h3>
                     <ul class="space-y-3 text-sm text-gray-600">
                         <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Delivery reports with all prepared items for accountability</li>
                         <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Mandatory nurse verification before delivery confirmation</li>
@@ -318,7 +329,7 @@
                     <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-dark mb-4">Medication Administration</h3>
+                    <h3 class="text-xl font-bold text-navy mb-4">Medication Administration</h3>
                     <ul class="space-y-3 text-sm text-gray-600">
                         <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Manual dose administration by ward nurse with stock tracking</li>
                         <li class="flex items-start"><svg class="w-4 h-4 text-accent mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Auto-administration via HIS integration when supported</li>
@@ -331,10 +342,10 @@
     </section>
 
     <!-- Ward Inventory -->
-    <section id="inventory" class="py-12 lg:py-16 bg-white">
+    <section id="inventory" class="py-8 lg:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Ward Inventory &amp; Stock Management</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Ward Inventory &amp; Stock Management</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Complete control over inpatient pharmacy and ward-level stock, including requisitions, transfers, batch management, and returns.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
@@ -342,35 +353,35 @@
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
                     </div>
-                    <h3 class="text-dark font-bold mb-2">Requisition &amp; Receiving</h3>
+                    <h3 class="text-navy font-bold mb-2">Requisition &amp; Receiving</h3>
                     <p class="text-gray-600 text-sm">Create stock requisition orders, filling, and receiving for inpatient wards with full traceability.</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
                     </div>
-                    <h3 class="text-dark font-bold mb-2">Transfers &amp; Adjustments</h3>
+                    <h3 class="text-navy font-bold mb-2">Transfers &amp; Adjustments</h3>
                     <p class="text-gray-600 text-sm">Stock transfers between wards and central pharmacy, physical inventory, and inventory adjustments.</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
                     </div>
-                    <h3 class="text-dark font-bold mb-2">Batch &amp; Expiry Management</h3>
+                    <h3 class="text-navy font-bold mb-2">Batch &amp; Expiry Management</h3>
                     <p class="text-gray-600 text-sm">Track medication batches and expiry dates. Transfer expired stock to the expiry store for proper handling.</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h3 class="text-dark font-bold mb-2">On-Hand Stock Visibility</h3>
+                    <h3 class="text-navy font-bold mb-2">On-Hand Stock Visibility</h3>
                     <p class="text-gray-600 text-sm">View real-time on-hand stock for all items in every ward. Trace all stock transactions at batch level.</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/></svg>
                     </div>
-                    <h3 class="text-dark font-bold mb-2">Returns &amp; Waste</h3>
+                    <h3 class="text-navy font-bold mb-2">Returns &amp; Waste</h3>
                     <p class="text-gray-600 text-sm">Release reserved stock for discontinued orders or patient discharge. Track wasted stock for inventory adjustment.</p>
                 </div>
             </div>
@@ -378,11 +389,10 @@
     </section>
 
     <!-- ADC Integration -->
-    <section id="adc" class="py-12 lg:py-16" style="background: linear-gradient(135deg, #0B1D33 0%, #122847 100%);">
+    <section id="adc" class="py-8 lg:py-12" style="background: linear-gradient(135deg, #0B1D33 0%, #122847 100%);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 scroll-reveal">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Automated Dispensing Cabinet Integration</h2>
-                <p class="text-white/60 max-w-3xl mx-auto">Vendor-agnostic integration with any automated dispensing cabinet&mdash;medication cabinets, RFD-supported cabinets, and supplies/consumables cabinets&mdash;delivering a single, unified workflow for pharmacy and nursing staff regardless of cabinet manufacturer.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
                 <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 card-hover">
@@ -428,111 +438,116 @@
                     <p class="text-white/50 text-sm">Define Rx order dispensing from ADC cabinet for the whole quantity or initial doses directly from the clinical verification or dispense screens.</p>
                 </div>
             </div>
+            <!-- Vendor-Agnostic Callout -->
+            <div class="mt-10 scroll-reveal max-w-4xl mx-auto">
+                <div class="bg-white/5 backdrop-blur rounded-2xl p-8 lg:p-10 border border-white/10">
+                    <div class="flex flex-col sm:flex-row items-start gap-5">
+                        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Vendor-Agnostic &mdash; One Workflow, Any Cabinet</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Whether your hospital uses medication cabinets, RFD-supported cabinets, or supplies and consumables cabinets from different manufacturers, the workflow remains unified. Pharmacy and nursing staff work with one consistent interface&mdash;no retraining, no fragmented processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Dashboard & Reporting -->
-    <section id="dashboard" class="py-12 lg:py-16 bg-gray-50">
+    <section id="dashboard" class="py-8 lg:py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Dashboard &amp; Reporting</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">Dashboard &amp; Reporting</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Real-time operational visibility with a centralized dashboard and comprehensive parameterized reporting.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal">
                 <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                     <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
-                    <h4 class="text-dark font-semibold text-sm text-center">Live IP Dashboard</h4>
+                    <h4 class="text-navy font-semibold text-sm text-center">Live IP Dashboard</h4>
                     <p class="text-gray-400 text-xs mt-1 text-center">Monitor all active Rx orders by workflow stage with high-priority tracking</p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                     <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
-                    <h4 class="text-dark font-semibold text-sm text-center">Dispensing Statistics &amp; KPIs</h4>
+                    <h4 class="text-navy font-semibold text-sm text-center">Dispensing Statistics &amp; KPIs</h4>
                     <p class="text-gray-400 text-xs mt-1 text-center">Dispensing volumes, turnaround times, and operational performance metrics</p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                     <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-                    <h4 class="text-dark font-semibold text-sm text-center">Parameterized Reports</h4>
+                    <h4 class="text-navy font-semibold text-sm text-center">Parameterized Reports</h4>
                     <p class="text-gray-400 text-xs mt-1 text-center">Rx orders by status, type, priority. Dispense details, stock transactions, ward stock reports</p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-gray-100 card-hover">
                     <svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
-                    <h4 class="text-dark font-semibold text-sm text-center">ADC Cabinet Reports</h4>
+                    <h4 class="text-navy font-semibold text-sm text-center">ADC Cabinet Reports</h4>
                     <p class="text-gray-400 text-xs mt-1 text-center">ADC stock levels, stock transactions, and cabinet utilization reports</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vendor-Agnostic -->
-    <section class="py-12 lg:py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="scroll-reveal max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-10 border border-primary/10">
-                    <div class="flex flex-col sm:flex-row items-start gap-5">
-                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-dark mb-3">Vendor-Agnostic &mdash; One Workflow, Any Cabinet</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">PharmaFlow integrates with automated dispensing cabinets from any vendor. Whether your hospital uses medication cabinets, RFD-supported cabinets, or supplies and consumables cabinets from different manufacturers, the workflow remains unified. Pharmacy and nursing staff work with one consistent interface&mdash;no retraining, no fragmented processes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Accreditation Readiness -->
-    <section class="py-12 lg:py-16 bg-white">
+    <section id="accreditation" class="py-8 lg:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="scroll-reveal max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-10 border border-primary/10">
-                    <div class="flex items-start gap-5">
-                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-dark mb-3">HIMSS &amp; JCI Accreditation Readiness</h3>
-                            <p class="text-gray-600 leading-relaxed mb-5">Implementing PharmaFlow in your hospital directly supports accreditation readiness for both HIMSS digital maturity models and JCI standards. Our platform provides the digital infrastructure, automated workflows, and clinical safeguards that accreditation bodies require.</p>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div class="flex items-start gap-2">
-                                    <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                    <span class="text-sm text-gray-600">Closed-loop medication management from order to administration</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                    <span class="text-sm text-gray-600">Automated clinical decision support and drug interaction screening</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                    <span class="text-sm text-gray-600">Complete audit trails and tamper-proof transaction logs</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                    <span class="text-sm text-gray-600">Barcode-verified medication administration at the bedside</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                    <span class="text-sm text-gray-600">Full HIS integration via HL7 for interoperability compliance</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                    <span class="text-sm text-gray-600">Controlled substance tracking, returns, and waste documentation</span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="text-center mb-10 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-4">HIMSS &amp; JCI Accreditation Readiness</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Implementing PharmaFlow in your hospital directly supports accreditation readiness for both HIMSS digital maturity models and JCI standards. Our platform provides the digital infrastructure, automated workflows, and clinical safeguards that accreditation bodies require.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
                     </div>
+                    <h3 class="text-navy font-bold mb-2">Closed-Loop Medication Management</h3>
+                    <p class="text-gray-500 text-sm">End-to-end tracking from order entry to bedside administration with full traceability at every stage.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold mb-2">Clinical Decision Support</h3>
+                    <p class="text-gray-500 text-sm">Automated drug interaction screening and clinical alerts enforced at the point of verification and dispensing.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold mb-2">Complete Audit Trails</h3>
+                    <p class="text-gray-500 text-sm">Tamper-proof transaction logs for every medication action, supporting compliance documentation and inspections.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"/><path d="M6.75 6.75h.75v.75h-.75v-.75zM6.75 16.5h.75v.75h-.75v-.75zM16.5 6.75h.75v.75h-.75v-.75zM13.5 13.5h.75v.75h-.75v-.75zM13.5 19.5h.75v.75h-.75v-.75zM19.5 13.5h.75v.75h-.75v-.75zM19.5 19.5h.75v.75h-.75v-.75zM16.5 16.5h.75v.75h-.75v-.75z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold mb-2">Bedside Barcode Verification</h3>
+                    <p class="text-gray-500 text-sm">Barcode-verified medication administration at the bedside ensuring the right patient receives the right medication.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold mb-2">HL7 Interoperability</h3>
+                    <p class="text-gray-500 text-sm">Full HIS integration via HL7 messaging for seamless data exchange and interoperability compliance.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold mb-2">Controlled Substance Tracking</h3>
+                    <p class="text-gray-500 text-sm">Full tracking of controlled substances including returns and waste documentation for regulatory compliance.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-12 lg:py-16 gradient-hero">
+    <section class="py-8 lg:py-12 gradient-hero">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
             <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Automate Your Inpatient Pharmacy</h2>
             <p class="text-white/70 text-lg mb-10">From central pharmacy to patient bedside. Every dose tracked. Every ward connected.</p>
-            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent/90 text-dark font-bold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20">
+            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent/90 text-navy font-bold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20">
                 Automate Your Inpatient Pharmacy
                 <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -540,17 +555,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark border-t border-white/10">
+    <footer class="bg-navy border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div>
                     <div class="flex items-center space-x-2 mb-6">
                         <img src="images/pharmaflow-logo.png" alt="PharmaFlow&trade;" class="h-16 w-auto ">
                     </div>
-                    <p class="text-white/50 text-sm leading-relaxed mb-2">The Digital Backbone of Automated Pharmacy Operations</p>
+                    <p class="text-white/50 text-sm leading-relaxed mb-2">The Digital Backbone Behind Every Pharmacy Workflow</p>
                     <div class="mb-4">
                         <p class="text-white/40 text-xs mb-2">Developed by</p>
-                        <div class="overflow-hidden" style="width:195px"><img src="images/fgs-logo-hires.png" alt="FutureGate Software" class="h-20 max-w-none opacity-80" style="filter:grayscale(1) contrast(3) invert(1);mix-blend-mode:screen"></div>
+                        <img src="images/fgs-logo-hires.png" alt="FutureGate Software" class="h-20 opacity-80" style="width:195px;filter:brightness(0) invert(1)">
                     </div>
                     <a href="https://www.linkedin.com" target="_blank" class="inline-flex items-center text-white/50 hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                 </div>
@@ -560,16 +575,15 @@
                         <li><a href="platform.html" class="text-white/50 hover:text-accent transition-colors">Platform Overview</a></li>
                         <li><a href="pdm.html" class="text-white/50 hover:text-accent transition-colors">PDM&trade;</a></li>
                         <li><a href="erx.html" class="text-white/50 hover:text-accent transition-colors">eRx Solution</a></li>
-                        <li><a href="inpatient.html" class="text-white/50 hover:text-accent transition-colors">Inpatient</a></li>
+                        <li><a href="inpatient.html" class="text-white/50 hover:text-accent transition-colors">Inpatient Pharmacy Management</a></li>
                         <li><a href="ai.html" class="text-white/50 hover:text-accent transition-colors">AI Capabilities</a></li>
-                        <li><a href="who-we-serve.html" class="text-white/50 hover:text-accent transition-colors">Who We Serve</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
                     <ul class="space-y-3 text-sm">
                         <li><a href="#" class="text-white/50 hover:text-accent transition-colors">About</a></li>
-                        <li><a href="proof.html" class="text-white/50 hover:text-accent transition-colors">Proof</a></li>
+                        <li><a href="proof.html" class="text-white/50 hover:text-accent transition-colors">Customer Success</a></li>
                         <li><a href="newsroom.html" class="text-white/50 hover:text-accent transition-colors">Newsroom</a></li>
                         <li><a href="#" class="text-white/50 hover:text-accent transition-colors">Careers</a></li>
                     </ul>
