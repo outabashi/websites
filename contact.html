@@ -166,7 +166,11 @@
                         <h2 class="text-2xl font-bold text-navy mb-2">Professional Inquiry</h2>
                         <p class="text-gray-500 text-sm mb-8">Complete the form below to discuss enterprise pharmacy automation with our team.</p>
 
-                        <form id="contactForm" class="space-y-6">
+                        <form id="contactForm" action="https://formsubmit.co/info@futuregatehc.com" method="POST" class="space-y-6">
+                            <input type="hidden" name="_subject" value="New PharmaFlow Contact Form Submission">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://pharmaflow.es/contact.html?success=true">
+                            <input type="text" name="_honey" style="display:none">
                             <div class="grid sm:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-sm font-semibold text-navy mb-2">Full Name <span class="text-red-400">*</span></label>
@@ -275,12 +279,11 @@
         closeMenu.addEventListener('click', () => { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); });
         menuOverlay.addEventListener('click', () => { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); });
 
-        // Form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            this.style.display = 'none';
+        // Show success message if redirected back after submission
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('contactForm').style.display = 'none';
             document.getElementById('successMessage').classList.remove('hidden');
-        });
+        }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); } });
