@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/fghc-logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneSource Connect EMS — Ambulance Telehealth</title>
+    <meta name="description" content="OneSource Connect EMS — Real-time ambulance telehealth with live streaming of medical device data, waveforms and video for remote clinical consultation.">
+    <meta name="keywords" content="ambulance telehealth, EMS, OneSource Connect, remote consultation, real-time streaming, patient monitoring, FutureGate Healthcare">
+    <meta property="og:title" content="OneSource Connect EMS — Ambulance Telehealth">
+    <meta property="og:description" content="Real-time ambulance telehealth with live streaming of medical device data, waveforms and video for remote clinical consultation.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/fghc-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OneSource Connect EMS — Ambulance Telehealth">
+    <meta name="twitter:description" content="Real-time ambulance telehealth with live streaming of medical device data, waveforms and video for remote clinical consultation.">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D4ED8',
+                        accent: '#3B82F6',
+                        accentLight: '#DBEAFE',
+                        accentLighter: '#EFF6FF',
+                        violet: '#7C3AED',
+                        violetLight: '#EDE9FE',
+                        darkText: '#111827',
+                        bodyText: '#4B5563',
+                        mutedText: '#9CA3AF',
+                        navDark: '#111827',
+                        sectionGray: '#F8FAFC',
+                        sectionGrayAlt: '#F1F5F9',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 50%, #DBEAFE 100%); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #3B82F6; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(59,130,246,0.15); }
+        .nav-logo-wrap { position: relative; display: inline-block; overflow: hidden; animation: logoFloat 4s ease-in-out infinite; }
+        .nav-logo-wrap::after { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 70%, transparent 100%); transform: skewX(-20deg); animation: logoShine 3s ease-in-out infinite; }
+        @keyframes logoShine { 0% { left: -60%; } 40% { left: 120%; } 100% { left: 120%; } }
+        @keyframes logoFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 25% { transform: translateY(-3px) rotate(0.5deg); } 75% { transform: translateY(2px) rotate(-0.5deg); } }
+        .nav-logo { transition: transform 0.3s ease; }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.open { transform: translateX(0); }
+        .anchor-nav { scrollbar-width: none; -ms-overflow-style: none; }
+        .anchor-nav::-webkit-scrollbar { display: none; }
+        .anchor-link.active { color: #1D4ED8; border-bottom-color: #1D4ED8; }
+        body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        img { pointer-events: none; }
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="bg-white text-bodyText antialiased">
+
+    <!-- Frame Busting -->
+    <script>
+        if (window.top !== window.self) { window.top.location = window.self.location; }
+    </script>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="nav-logo-wrap"><img src="images/fghc-logo.png" alt="FutureGate Healthcare Solutions" class="h-14 w-auto nav-logo"></span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <div class="relative group">
+                        <button class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium inline-flex items-center">About Us<svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 top-full pt-1 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-xl py-1">
+                                <a href="company-overview.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Company Overview</a>
+                                <a href="ceo-message.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Message from CEO</a>
+                                <a href="careers.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Careers</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="nav-link text-primary font-semibold px-3 py-2 text-sm inline-flex items-center">Solutions<svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-xl py-1">
+                                <a href="pharmacy-automation.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Pharmacy Automation</a>
+                                <a href="self-service-pharmacy.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Self-Service Robotic Pharmacy</a>
+                                <a href="pharmaflow.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">PharmaFlow Platform</a>
+                                <a href="smart-clinic.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Smart Clinic</a>
+                                <a href="telehealth.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Telehealth</a>
+                                <a href="ambulance-ems.html" class="block px-4 py-2.5 text-sm text-primary bg-accentLighter font-medium">Ambulance Telehealth</a>
+                                <a href="system-integrations.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">System Integrations</a>
+                                <a href="remote-monitoring.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Remote Monitoring</a>
+                                <a href="ai-wearable-robotics.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">AI Wearable Robotics</a>
+                                <a href="robotic-blood-collection.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentLighter">Robotic Blood Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="services.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="partners.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Partners</a>
+                    <a href="clients.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Clients</a>
+                    <a href="newsroom.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Newsroom</a>
+                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-primary hover:bg-blue-800 text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
+                </div>
+                <button id="menuBtn" class="lg:hidden text-darkText p-2">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-white border-l border-gray-200 lg:hidden z-50">
+            <div class="flex justify-end p-4">
+                <button id="closeMenu" class="text-bodyText p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+            </div>
+            <div class="flex flex-col px-6 space-y-4">
+                <a href="index.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Home</a>
+                <div class="py-2 border-b border-gray-100">
+                    <p class="text-darkText text-base font-medium">About Us</p>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="company-overview.html" class="block text-bodyText hover:text-primary text-sm">Company Overview</a>
+                        <a href="ceo-message.html" class="block text-bodyText hover:text-primary text-sm">Message from CEO</a>
+                        <a href="careers.html" class="block text-bodyText hover:text-primary text-sm">Careers</a>
+                    </div>
+                </div>
+                <div class="py-2 border-b border-gray-100">
+                    <p class="text-primary text-base font-medium">Solutions</p>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="pharmacy-automation.html" class="block text-bodyText hover:text-primary text-sm">Pharmacy Automation</a>
+                        <a href="self-service-pharmacy.html" class="block text-bodyText hover:text-primary text-sm">Self-Service Robotic Pharmacy</a>
+                        <a href="pharmaflow.html" class="block text-bodyText hover:text-primary text-sm">PharmaFlow Platform</a>
+                        <a href="smart-clinic.html" class="block text-bodyText hover:text-primary text-sm">Smart Clinic</a>
+                        <a href="telehealth.html" class="block text-bodyText hover:text-primary text-sm">Telehealth</a>
+                        <a href="ambulance-ems.html" class="block text-primary text-sm font-medium">Ambulance Telehealth</a>
+                        <a href="system-integrations.html" class="block text-bodyText hover:text-primary text-sm">System Integrations</a>
+                        <a href="remote-monitoring.html" class="block text-bodyText hover:text-primary text-sm">Remote Monitoring</a>
+                        <a href="ai-wearable-robotics.html" class="block text-bodyText hover:text-primary text-sm">AI Wearable Robotics</a>
+                        <a href="robotic-blood-collection.html" class="block text-bodyText hover:text-primary text-sm">Robotic Blood Collection</a>
+                    </div>
+                </div>
+                <a href="services.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Services</a>
+                <a href="partners.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Partners</a>
+                <a href="clients.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Clients</a>
+                <a href="newsroom.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Newsroom</a>
+                <a href="contact.html" class="mt-2 inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-blue-800 text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-100 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-4">Solutions</p>
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-darkText leading-tight mb-4">OneSource Connect EMS</h1>
+                <p class="text-2xl lg:text-3xl font-bold text-violet mb-6">Real-Time. Remote View. Consult.</p>
+                <p class="text-xl text-bodyText max-w-2xl">In today's world, telemedicine and staff shortages are increasing the demand for streamlined communication and easy remote consultations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anchor Navigation -->
+    <div class="sticky top-16 lg:top-20 z-30 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="anchor-nav flex space-x-8 overflow-x-auto py-3">
+                <a href="#overview" class="anchor-link whitespace-nowrap text-sm font-medium text-bodyText hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Overview</a>
+                <a href="#capabilities" class="anchor-link whitespace-nowrap text-sm font-medium text-bodyText hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Core Capabilities</a>
+                <a href="#clinical" class="anchor-link whitespace-nowrap text-sm font-medium text-bodyText hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Clinical Features</a>
+                <a href="#vendor" class="anchor-link whitespace-nowrap text-sm font-medium text-bodyText hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Vendor Agnostic</a>
+                <a href="#product" class="anchor-link whitespace-nowrap text-sm font-medium text-bodyText hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Product Info</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal max-w-3xl mb-16">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Overview</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Connecting Ambulances to Remote Clinicians</h2>
+                <p class="text-lg text-bodyText leading-relaxed">OneSource Connect EMS bridges the gap between ambulance crews and remote clinical teams, enabling real-time data sharing, live video streaming, and instant consultations that accelerate patient care and improve outcomes.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-2xl p-8 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-accentLight rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-darkText mb-3">Accelerate Patient Care</h3>
+                    <p class="text-bodyText leading-relaxed text-sm">Share critical data and real-time status to accelerate clinical decision-making and patient care.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-2xl p-8 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-accentLight rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-darkText mb-3">Organize Workflow</h3>
+                    <p class="text-bodyText leading-relaxed text-sm">Organize your workflow across all teams with live streaming and synchronized data views.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-2xl p-8 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-accentLight rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-darkText mb-3">Expedite Treatment</h3>
+                    <p class="text-bodyText leading-relaxed text-sm">Expedite treatment or transport plans backed by remote clinicians with full visibility into patient status.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-2xl p-8 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-accentLight rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-darkText mb-3">Streamline Communication</h3>
+                    <p class="text-bodyText leading-relaxed text-sm">Streamline communication with easy access to patient updates across the entire care chain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Capabilities Section -->
+    <section id="capabilities" class="py-20 lg:py-28 bg-sectionGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal max-w-3xl mb-16">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Core Capabilities</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Key Features That Power EMS Telehealth</h2>
+                <p class="text-lg text-bodyText leading-relaxed">A comprehensive platform that streams, records, and shares real-time medical data between ambulances and remote clinical teams.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="scroll-reveal card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 bg-violetLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Real-Time Data Streaming</h3>
+                    <p class="text-bodyText leading-relaxed">Stream and synchronize real-time medical device data, waveforms and video from multiple sources (monitor, defibrillator, infusion pumps, ventilator) with up to 2 IP video cameras. Requires 4G/5G connectivity.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 bg-accentLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Remote Access</h3>
+                    <p class="text-bodyText leading-relaxed">Remote viewing of combined data, waveforms and video through secure web browser. Up to 5 concurrent remote viewers per ambulance for collaborative clinical decision-making.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 bg-violetLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Ambulance Integration</h3>
+                    <p class="text-bodyText leading-relaxed">Fully integrated into ambulance infrastructure with local wireless web server and cloud service for seamless connectivity and data management.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 bg-accentLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">24-Hour Recording</h3>
+                    <p class="text-bodyText leading-relaxed">Records and stores up to 24 hours of continuous synchronized data with DVR-like controls including pause, fast forward, rewind, and live viewing.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 bg-violetLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Lossless Capture</h3>
+                    <p class="text-bodyText leading-relaxed">Lossless data capture even when there is no cellular connectivity, ensuring no critical patient information is ever lost during transport.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 bg-accentLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Multi-Ambulance Mode</h3>
+                    <p class="text-bodyText leading-relaxed">Supervisor mode allows viewing multiple ambulances simultaneously, giving dispatchers and medical directors a complete operational overview.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Features Section -->
+    <section id="clinical" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal max-w-3xl mb-16">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Clinical Features</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Comprehensive Clinical Toolset</h2>
+                <p class="text-lg text-bodyText leading-relaxed">A full suite of clinical features designed for EMS professionals and remote clinicians to monitor, document, and analyze patient data in real time.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Patient Profile Management</h4>
+                        <p class="text-bodyText text-sm">Age, height, weight and demographic data management</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-violetLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Organized Vital Charts</h4>
+                        <p class="text-bodyText text-sm">BP, heart rate, SpO2, respiration, MAP, temperature</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Real-Time Vitals &amp; Waveforms</h4>
+                        <p class="text-bodyText text-sm">Live vitals, trends and waveforms displayed in readable tiles</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-violetLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Zoom In/Out</h4>
+                        <p class="text-bodyText text-sm">Detailed data examination with flexible zoom controls</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Historical Records</h4>
+                        <p class="text-bodyText text-sm">Access past records with date/time filtering capabilities</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-violetLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Drug &amp; Fluid Tracking</h4>
+                        <p class="text-bodyText text-sm">Drug and fluid administration tracking and documentation</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Timeline Overlay Tooltips</h4>
+                        <p class="text-bodyText text-sm">Interactive timeline with contextual overlay tooltips</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-violetLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Vital Trend Analysis</h4>
+                        <p class="text-bodyText text-sm">Analyze vital sign trends over time for clinical insights</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Transport Timestamps</h4>
+                        <p class="text-bodyText text-sm">Start/end, pickup/drop-off time tracking for every transport</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-violetLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Event Markers</h4>
+                        <p class="text-bodyText text-sm">Mark and document critical events during transport</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Switchable Display Modes</h4>
+                        <p class="text-bodyText text-sm">Toggle between charting, trending, and waveform views</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-violetLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18.75 7.5H5.25"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Printable Transport Reports</h4>
+                        <p class="text-bodyText text-sm">Generate and print comprehensive transport reports</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-xl p-6 border border-gray-100 flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-accentLight rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-darkText mb-1">Access Management &amp; Security</h4>
+                        <p class="text-bodyText text-sm">User access management and role-based security controls</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vendor Agnostic Section -->
+    <section id="vendor" class="py-20 lg:py-28 bg-sectionGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal max-w-4xl mx-auto text-center">
+                <div class="w-20 h-20 bg-violetLight rounded-2xl flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-10 h-10 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+                </div>
+                <p class="text-violet font-semibold text-sm tracking-widest uppercase mb-3">Vendor Agnostic</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Works With Your Existing Equipment</h2>
+                <p class="text-lg text-bodyText leading-relaxed max-w-2xl mx-auto">OneSource Connect EMS supports most major brands of patient monitors, ventilators, and drug infusion pumps — so you can integrate seamlessly with the medical devices already in your fleet without costly replacements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Info Section -->
+    <section id="product" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal max-w-3xl mb-16">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Product Information</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Manufacturer &amp; Distribution</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-2xl p-8 border border-gray-100">
+                    <div class="w-14 h-14 bg-violetLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3H21m-3.75 3H21"/></svg>
+                    </div>
+                    <p class="text-mutedText text-xs font-semibold tracking-widest uppercase mb-2">Manufactured By</p>
+                    <h3 class="text-xl font-bold text-darkText mb-2">OneSource Solutions International, Inc.</h3>
+                    <p class="text-bodyText mb-4">Sudbury, MA, USA</p>
+                    <a href="https://oss.international" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-blue-800 font-semibold text-sm transition-colors">
+                        oss.international
+                        <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                    </a>
+                </div>
+                <div class="scroll-reveal card-hover bg-sectionGray rounded-2xl p-8 border border-gray-100">
+                    <div class="w-14 h-14 bg-accentLight rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25"/></svg>
+                    </div>
+                    <p class="text-mutedText text-xs font-semibold tracking-widest uppercase mb-2">Distributed in Middle East By</p>
+                    <h3 class="text-xl font-bold text-darkText mb-2">FutureGate Healthcare Solutions LLC</h3>
+                    <p class="text-bodyText">Dubai, UAE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 lg:py-28 bg-accentLighter relative overflow-hidden">
+        <div class="absolute inset-0 opacity-40">
+            <div class="absolute top-10 right-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-64 h-64 bg-blue-100 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Transform Your EMS Operations</h2>
+                <p class="text-lg text-bodyText mb-8 max-w-2xl mx-auto">Connect your ambulance fleet with remote clinicians through real-time data streaming, video, and consultation — improving patient outcomes from the moment of pickup.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3.5 bg-primary hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors">Get in Touch</a>
+                    <a href="telehealth.html" class="inline-flex items-center justify-center px-8 py-3.5 border border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-lg transition-colors">Explore Telehealth</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navDark pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <img src="images/fghc-logo-white.png" alt="FutureGate Healthcare Solutions" class="h-12 w-auto mb-6">
+                    <p class="text-gray-400 text-sm leading-relaxed">Transforming healthcare through innovative technology solutions that improve patient outcomes and operational efficiency.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Home</a></li>
+                        <li><a href="company-overview.html" class="text-gray-400 hover:text-accent text-sm transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Services</a></li>
+                        <li><a href="partners.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Partners</a></li>
+                        <li><a href="clients.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Clients</a></li>
+                        <li><a href="newsroom.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Newsroom</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pharmacy-automation.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Pharmacy Automation</a></li>
+                        <li><a href="self-service-pharmacy.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Self-Service Robotic Pharmacy</a></li>
+                        <li><a href="pharmaflow.html" class="text-gray-400 hover:text-accent text-sm transition-colors">PharmaFlow Platform</a></li>
+                        <li><a href="smart-clinic.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Smart Clinic</a></li>
+                        <li><a href="telehealth.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Telehealth</a></li>
+                        <li><a href="ambulance-ems.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Ambulance Telehealth</a></li>
+                        <li><a href="system-integrations.html" class="text-gray-400 hover:text-accent text-sm transition-colors">System Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            <span class="text-gray-400 text-sm">Cayan Business Centre, Office 103,<br>Al Barsha Heights, Dubai, UAE</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                            <a href="tel:+97145661223" class="text-gray-400 hover:text-accent text-sm transition-colors">+971-45661223</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <a href="mailto:info@futuregatehc.com" class="text-gray-400 hover:text-accent text-sm transition-colors">info@futuregatehc.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2026 FutureGate Healthcare Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.remove('hidden'); }
+        function closeMenuFn() { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); }
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        menuOverlay.addEventListener('click', closeMenuFn);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        const sections = document.querySelectorAll('section[id]');
+        const anchorLinks = document.querySelectorAll('.anchor-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) { current = section.getAttribute('id'); }
+            });
+            anchorLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) { e.preventDefault(); }
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J'))) { e.preventDefault(); }
+        });
+    </script>
+
+</body>
+</html>

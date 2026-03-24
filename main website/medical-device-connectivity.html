@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/fghc-logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Device Data Connectivity - FutureGate Healthcare Solutions</title>
+    <meta name="description" content="OSSI Medical Device Data Connectivity — medical middleware connecting over 90% of ICU devices to healthcare information systems. Multi-vendor support for monitors, ventilators, anesthesia machines, and more.">
+    <meta name="keywords" content="medical device connectivity, OSSI, medical middleware, ICU devices, patient monitoring, ventilators, anesthesia machines, MDDS, FDA, FutureGate Healthcare">
+    <meta property="og:title" content="Medical Device Data Connectivity - FutureGate Healthcare Solutions">
+    <meta property="og:description" content="Medical middleware connecting clinical devices to healthcare information systems. Support for 90%+ of ICU medical machines.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/fghc-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Medical Device Data Connectivity - FutureGate Healthcare Solutions">
+    <meta name="twitter:description" content="Medical middleware connecting clinical devices to healthcare information systems. Support for 90%+ of ICU medical machines.">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D4ED8',
+                        accent: '#3B82F6',
+                        accentLight: '#60A5FA',
+                        lightBg: '#F8FAFC',
+                        lightBg2: '#F1F5F9',
+                        accentBg: '#DBEAFE',
+                        accentBg2: '#EFF6FF',
+                        darkText: '#111827',
+                        bodyText: '#4B5563',
+                        mutedText: '#9CA3AF',
+                        navDark: '#111827',
+                        violet: '#7C3AED',
+                        violetBg: '#EDE9FE',
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 50%, #60A5FA 100%); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #1D4ED8; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(29,78,216,0.12); }
+        .nav-logo-wrap { position: relative; display: inline-block; overflow: hidden; animation: logoFloat 4s ease-in-out infinite; }
+        .nav-logo-wrap::after { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 70%, transparent 100%); transform: skewX(-20deg); animation: logoShine 3s ease-in-out infinite; }
+        @keyframes logoShine { 0% { left: -60%; } 40% { left: 120%; } 100% { left: 120%; } }
+        @keyframes logoFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 25% { transform: translateY(-3px) rotate(0.5deg); } 75% { transform: translateY(2px) rotate(-0.5deg); } }
+        .nav-logo { transition: transform 0.3s ease; }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.open { transform: translateX(0); }
+        body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        img { pointer-events: none; }
+        .divider-line { height: 1px; background: linear-gradient(90deg, transparent, #3B82F6, transparent); }
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="bg-white text-bodyText antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="nav-logo-wrap"><img src="images/fghc-logo.png" alt="FutureGate Healthcare Solutions" class="h-14 w-auto nav-logo"></span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <div class="relative group">
+                        <button class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium inline-flex items-center">About Us<svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 top-full pt-1 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg py-1">
+                                <a href="about.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Company Overview</a>
+                                <a href="ceo-message.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Message from CEO</a>
+                                <a href="careers.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Careers</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="nav-link text-primary font-semibold px-3 py-2 text-sm inline-flex items-center">Solutions<svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg py-1">
+                                <a href="pharmacy-automation.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Pharmacy Automation</a>
+                                <a href="self-service-robotic-pharmacy.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Self-Service Robotic Pharmacy</a>
+                                <a href="pharmaflow-platform.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">PharmaFlow Platform</a>
+                                <a href="smart-clinic.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Smart Clinic</a>
+                                <a href="telehealth.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Telehealth</a>
+                                <a href="system-integrations.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">System Integrations</a>
+                                <a href="medical-device-connectivity.html" class="block px-4 py-2.5 text-sm text-primary font-semibold hover:bg-accentBg2">Medical Device Data Connectivity</a>
+                                <a href="remote-monitoring.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Remote Monitoring</a>
+                                <a href="ai-robotics.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">AI Wearable Robotics</a>
+                                <a href="robotic-blood-collection.html" class="block px-4 py-2.5 text-sm text-bodyText hover:text-primary hover:bg-accentBg2">Robotic Blood Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="services.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="partners.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Partners</a>
+                    <a href="clients.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Clients</a>
+                    <a href="newsroom.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Newsroom</a>
+                    <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-primary hover:bg-accent text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
+                </div>
+                <button id="menuBtn" class="lg:hidden text-bodyText p-2">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="menuOverlay" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden"></div>
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-white border-l border-gray-200 lg:hidden z-50">
+            <div class="flex justify-end p-4">
+                <button id="closeMenu" class="text-bodyText p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+            </div>
+            <div class="flex flex-col px-6 space-y-4">
+                <a href="index.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Home</a>
+                <div class="py-2 border-b border-gray-100">
+                    <p class="text-bodyText text-base font-medium">About Us</p>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="about.html" class="block text-bodyText hover:text-primary text-sm">Company Overview</a>
+                        <a href="ceo-message.html" class="block text-bodyText hover:text-primary text-sm">Message from CEO</a>
+                        <a href="careers.html" class="block text-bodyText hover:text-primary text-sm">Careers</a>
+                    </div>
+                </div>
+                <div class="py-2 border-b border-gray-100">
+                    <p class="text-primary text-base font-semibold">Solutions</p>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="pharmacy-automation.html" class="block text-bodyText hover:text-primary text-sm">Pharmacy Automation</a>
+                        <a href="self-service-robotic-pharmacy.html" class="block text-bodyText hover:text-primary text-sm">Self-Service Robotic Pharmacy</a>
+                        <a href="pharmaflow-platform.html" class="block text-bodyText hover:text-primary text-sm">PharmaFlow Platform</a>
+                        <a href="smart-clinic.html" class="block text-bodyText hover:text-primary text-sm">Smart Clinic</a>
+                        <a href="telehealth.html" class="block text-bodyText hover:text-primary text-sm">Telehealth</a>
+                        <a href="system-integrations.html" class="block text-bodyText hover:text-primary text-sm">System Integrations</a>
+                        <a href="medical-device-connectivity.html" class="block text-primary text-sm font-semibold">Medical Device Data Connectivity</a>
+                        <a href="remote-monitoring.html" class="block text-bodyText hover:text-primary text-sm">Remote Monitoring</a>
+                        <a href="ai-robotics.html" class="block text-bodyText hover:text-primary text-sm">AI Wearable Robotics</a>
+                        <a href="robotic-blood-collection.html" class="block text-bodyText hover:text-primary text-sm">Robotic Blood Collection</a>
+                    </div>
+                </div>
+                <a href="services.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Services</a>
+                <a href="partners.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Partners</a>
+                <a href="clients.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Clients</a>
+                <a href="newsroom.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Newsroom</a>
+                <a href="contact.html" class="mt-4 text-center px-5 py-3 bg-primary hover:bg-accent text-white font-semibold rounded-lg">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-hero pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center px-4 py-1.5 bg-white/20 border border-white/30 rounded-full mb-8">
+                    <span class="text-white text-sm font-medium">OSSI Medical Middleware</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">Medical Device Data Connectivity</h1>
+                <p class="text-xl lg:text-2xl text-white/90 font-medium mb-6">Connecting Clinical Devices to Healthcare Systems</p>
+                <p class="text-lg text-white/75 max-w-3xl leading-relaxed">
+                    OSSI provides medical middleware connecting over 90% of medical machines used for intensive care, bridging the gap between clinical devices and information systems. Purpose-built to handle the complexity of multi-vendor device ecosystems, our connectivity platform ensures accurate, real-time clinical data flows seamlessly from bedside to electronic medical records.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-4">What It Does</h2>
+                <div class="divider-line w-24 mx-auto mb-6"></div>
+                <p class="text-bodyText text-lg max-w-3xl mx-auto">
+                    OSSI connects to medical devices across multiple manufacturers and specialties. Acting as medical middleware, it handles data transformation, proprietary protocols, and integration&mdash;delivering clean, standardized data ready for clinical system use.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="w-14 h-14 bg-accentBg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Multi-Vendor Connectivity</h3>
+                    <p class="text-bodyText leading-relaxed">Connect to 90%+ of ICU devices across all major manufacturers, eliminating vendor lock-in and enabling a unified view of patient data from any bedside device.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="w-14 h-14 bg-accentBg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Data Transformation</h3>
+                    <p class="text-bodyText leading-relaxed">Handles proprietary protocols from dozens of device manufacturers and transforms raw device output into standardized, clinically meaningful data ready for use.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="w-14 h-14 bg-accentBg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Network Protection</h3>
+                    <p class="text-bodyText leading-relaxed">Manages security and network protection for connected medical devices, isolating clinical networks and safeguarding sensitive patient data in transit.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="w-14 h-14 bg-accentBg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Real-Time Integration</h3>
+                    <p class="text-bodyText leading-relaxed">Direct, real-time connectivity with patient monitors, ventilators, anesthesia machines, and more&mdash;ensuring clinical teams always have the latest device data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Devices -->
+    <section class="py-16 lg:py-24 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-4">Supported Devices &amp; Manufacturers</h2>
+                <div class="divider-line w-24 mx-auto mb-6"></div>
+                <p class="text-bodyText text-lg max-w-3xl mx-auto">
+                    OSSI supports an extensive range of medical device categories and leading manufacturers, providing broad coverage across the intensive care environment.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accentBg rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-darkText">Patient Monitoring</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">GE</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Philips</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Mindray</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Draeger</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Spacelabs</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Nihon Kohden</span>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accentBg rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-darkText">Anesthesia Equipment</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Draeger</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Mindray</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">GE</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Datex-Ohmeda</span>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accentBg rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-darkText">Ventilators</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">BP</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Draeger</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">GE</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Philips</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Datex-Ohmeda</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Maquet</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">GEM</span>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accentBg rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-darkText">Vital Sign Monitors</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Aspect</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Nellcore</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Medrad</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Ikaria</span>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accentBg rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-darkText">Laboratory Systems</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">ABL</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Onyx</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Cobas</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Masimo</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">JBA</span>
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Stat</span>
+                    </div>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accentBg rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.1-5.1a1.5 1.5 0 010-2.12l.88-.88a1.5 1.5 0 012.12 0l2.83 2.83 5.66-5.66a1.5 1.5 0 012.12 0l.88.88a1.5 1.5 0 010 2.12l-7.07 7.07a1.5 1.5 0 01-2.12-.16z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-darkText">ECMO Devices</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accentBg2 text-primary text-xs font-medium rounded-full">Maquet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connected Equipment -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-4">Connected Equipment</h2>
+                <div class="divider-line w-24 mx-auto mb-6"></div>
+                <p class="text-bodyText text-lg max-w-3xl mx-auto">
+                    From bedside monitors to laboratory analyzers, OSSI connects the full spectrum of clinical equipment found in modern intensive care and hospital environments.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Multi-Parameter Monitors</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Anesthesia Machines</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Ventilators</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Thermometers</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Blood Pressure Gauges</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Laboratory Machines</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">IV Pumps</h3>
+                </div>
+                <div class="scroll-reveal text-center p-6 bg-lightBg border border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-accentBg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-darkText">Image Acquisition Equipment</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulatory & Quality -->
+    <section class="py-16 lg:py-24 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-4">Regulatory &amp; Quality</h2>
+                <div class="divider-line w-24 mx-auto mb-6"></div>
+                <p class="text-bodyText text-lg max-w-3xl mx-auto">
+                    OSSI Medical Device Data Connectivity is built on a foundation of regulatory compliance and quality assurance, meeting the highest standards for medical device data systems.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm text-center">
+                    <div class="w-20 h-20 bg-violetBg border border-violet/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">FDA Quality System</h3>
+                    <p class="text-bodyText leading-relaxed">Compliant with FDA Medical Device Quality System regulations, ensuring rigorous design controls, documentation, and manufacturing processes for medical-grade software.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm text-center">
+                    <div class="w-20 h-20 bg-violetBg border border-violet/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">MDDS Classification</h3>
+                    <p class="text-bodyText leading-relaxed">Classified under Medical Device Data Systems (MDDS) regulatory framework, providing a clear pathway for deployment in clinical environments with appropriate risk categorization.</p>
+                </div>
+                <div class="scroll-reveal card-hover bg-white border border-gray-200 rounded-xl p-8 shadow-sm text-center">
+                    <div class="w-20 h-20 bg-violetBg border border-violet/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-darkText mb-3">Risk Mitigation</h3>
+                    <p class="text-bodyText leading-relaxed">Comprehensive risk mitigation protocols ensuring data accuracy, completeness, and integrity throughout the entire data chain from device capture to clinical system delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal bg-gradient-to-r from-accentBg to-accentBg2 border border-blue-200 rounded-2xl p-10 lg:p-16 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-darkText mb-6">Ready to Connect Your Medical Devices?</h2>
+                <p class="text-bodyText text-lg max-w-2xl mx-auto mb-8">
+                    Contact us to learn how OSSI Medical Device Data Connectivity can bridge your clinical devices with your healthcare information systems, delivering real-time data where it matters most.
+                </p>
+                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-primary hover:bg-accent text-white font-semibold rounded-lg transition-colors text-lg">
+                    Contact Us
+                    <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <img src="images/fghc-logo-white.png" alt="FutureGate Healthcare Solutions" class="h-12 w-auto mb-6">
+                    <p class="text-gray-400 text-sm leading-relaxed">Pioneering healthcare technology solutions that transform patient care and operational excellence across the Middle East and beyond.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-accent text-sm transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Services</a></li>
+                        <li><a href="partners.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Partners</a></li>
+                        <li><a href="clients.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Clients</a></li>
+                        <li><a href="newsroom.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Newsroom</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pharmacy-automation.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Pharmacy Automation</a></li>
+                        <li><a href="self-service-robotic-pharmacy.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Self-Service Robotic Pharmacy</a></li>
+                        <li><a href="pharmaflow-platform.html" class="text-gray-400 hover:text-accent text-sm transition-colors">PharmaFlow Platform</a></li>
+                        <li><a href="smart-clinic.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Smart Clinic</a></li>
+                        <li><a href="telehealth.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Telehealth</a></li>
+                        <li><a href="system-integrations.html" class="text-gray-400 hover:text-accent text-sm transition-colors">System Integrations</a></li>
+                        <li><a href="medical-device-connectivity.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Medical Device Data Connectivity</a></li>
+                        <li><a href="remote-monitoring.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Remote Monitoring</a></li>
+                        <li><a href="ai-robotics.html" class="text-gray-400 hover:text-accent text-sm transition-colors">AI Wearable Robotics</a></li>
+                        <li><a href="robotic-blood-collection.html" class="text-gray-400 hover:text-accent text-sm transition-colors">Robotic Blood Collection</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            <span class="text-gray-400 text-sm">Cayan Business Centre, Office 103, Al Barsha Heights, Dubai, UAE</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                            <a href="tel:+97145661223" class="text-gray-400 hover:text-accent text-sm transition-colors">+971-45661223</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <a href="mailto:info@futuregatehc.com" class="text-gray-400 hover:text-accent text-sm transition-colors">info@futuregatehc.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider-line mt-12 mb-8"></div>
+            <div class="text-center">
+                <p class="text-gray-400 text-sm">&copy; 2026 FutureGate Healthcare Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Frame busting
+        if (window.top !== window.self) { window.top.location = window.self.location; }
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.remove('hidden'); }
+        function closeMenuFn() { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); }
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        menuOverlay.addEventListener('click', closeMenuFn);
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Copy protection
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p')) { e.preventDefault(); }
+            if (e.key === 'F12') { e.preventDefault(); }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) { e.preventDefault(); }
+        });
+    </script>
+</body>
+</html>
