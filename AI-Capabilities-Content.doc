@@ -1,0 +1,200 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PharmaFlow AI Capabilities - Content</title>
+<style>
+body { font-family: 'Calibri', 'Segoe UI', sans-serif; color: #333; margin: 40px; line-height: 1.6; }
+h1 { font-size: 28pt; color: #0B1D33; margin-bottom: 4px; }
+h2 { font-size: 20pt; color: #0B1D33; margin-top: 30px; margin-bottom: 8px; border-bottom: 2px solid #00B4D8; padding-bottom: 6px; }
+h3 { font-size: 14pt; color: #0077B6; margin-top: 18px; margin-bottom: 6px; }
+h4 { font-size: 12pt; color: #0B1D33; margin-top: 14px; margin-bottom: 4px; }
+p { font-size: 11pt; margin-bottom: 8px; }
+ul { margin-top: 4px; margin-bottom: 12px; }
+li { font-size: 11pt; margin-bottom: 4px; }
+.subtitle { font-size: 14pt; color: #00B4D8; font-weight: 600; margin-bottom: 20px; }
+.section-subtitle { font-size: 11pt; color: #666; margin-bottom: 16px; }
+.badge { display: inline-block; background: #e8f4f8; color: #0077B6; font-size: 9pt; font-weight: 600; padding: 2px 10px; border-radius: 12px; margin-bottom: 8px; }
+.stat { font-size: 18pt; font-weight: 700; color: #0077B6; }
+.stat-label { font-size: 9pt; color: #999; }
+table.stats { border-collapse: collapse; margin: 12px 0; }
+table.stats td { padding: 8px 20px; text-align: center; border: 1px solid #ddd; }
+.cta { font-size: 14pt; color: #0B1D33; font-weight: 700; margin-top: 24px; }
+.cta-sub { font-size: 11pt; color: #666; }
+hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<h1>PharmaFlow&#8482; AI Capabilities</h1>
+<p class="subtitle">Intelligence Across Every Pharmacy Setting</p>
+<p class="badge">Operational Intelligence</p>
+
+<hr>
+
+<!-- ==================== OUTPATIENT ==================== -->
+<h2>1. Outpatient Pharmacy AI</h2>
+
+<h3>Wait Time Prediction</h3>
+<ul>
+<li>Real-time estimates based on queue depth, prescription complexity, and robotic utilization</li>
+<li>Appointment slot optimization to distribute demand evenly</li>
+</ul>
+
+<h3>Failed Pickup Prevention</h3>
+<ul>
+<li>No-show probability scoring per prescription</li>
+<li>Proactive reminder sequences for high-risk pickups</li>
+<li>Return-to-stock optimization to reduce waste</li>
+</ul>
+
+<h3>Queue &amp; Workflow Optimization</h3>
+<ul>
+<li>Intelligent queue prioritization based on complexity &amp; urgency</li>
+<li>Multi-window balancing for minimum wait times</li>
+<li>Real-time bottleneck detection and rerouting</li>
+</ul>
+
+<hr>
+
+<!-- ==================== INPATIENT ==================== -->
+<h2>2. Inpatient Pharmacy AI</h2>
+
+<h3>Smart Order Screening</h3>
+<ul>
+<li>Auto-verification candidates for expedited pharmacist review</li>
+<li>High-risk order flagging with patient-specific risk factors</li>
+<li>Prescriber pattern analysis for compliance monitoring</li>
+</ul>
+
+<h3>Cycle Fill Optimization</h3>
+<ul>
+<li>Ward-level demand prediction based on patient census, admission/discharge patterns</li>
+<li>Batch preparation scheduling aligned with nursing shift changes</li>
+</ul>
+
+<h3>Ward AI</h3>
+<ul>
+<li>Expiry risk scoring with redistribution suggestions</li>
+<li>Emergency stock prediction based on patient acuity scores</li>
+</ul>
+
+<hr>
+
+<!-- ==================== PDM NETWORK ==================== -->
+<h2>3. PDM&#8482; Network AI</h2>
+<p class="section-subtitle">Network-level intelligence across all PDM&#8482; branches</p>
+
+<h3>Demand Forecasting</h3>
+<p>Location-specific prediction with event-driven adjustments and new location estimation</p>
+
+<h3>Stock Optimization</h3>
+<p>Network-wide inventory balancing, FEFO enforcement, cross-branch transfer recommendations</p>
+
+<h3>Queue Balancing</h3>
+<p>Robotic utilization optimization and maintenance window planning during low-demand periods</p>
+
+<h3>Anomaly Detection</h3>
+<p>Usage pattern anomalies, equipment health monitoring, environmental tracking</p>
+
+<h4>Key Metrics</h4>
+<table class="stats">
+<tr>
+<td><span class="stat">N+</span><br><span class="stat-label">PDM&#8482; units optimized simultaneously</span></td>
+<td><span class="stat">24/7</span><br><span class="stat-label">Continuous operational intelligence</span></td>
+<td><span class="stat">Real-time</span><br><span class="stat-label">Cross-network optimization</span></td>
+</tr>
+</table>
+
+<hr>
+
+<!-- ==================== ENTERPRISE ==================== -->
+<h2>4. Enterprise AI</h2>
+<p class="section-subtitle">Cross-platform intelligence for the entire pharmacy operation</p>
+
+<h3>Inventory &amp; Supply Chain Intelligence</h3>
+<ul>
+<li><b>Intelligent Procurement:</b> Optimal purchase orders based on demand forecasts, stock levels, lead times, and budget</li>
+<li><b>Supplier Scoring:</b> Rankings based on delivery reliability, pricing trends, and quality metrics</li>
+<li><b>Expiry Prediction:</b> Identifies at-risk medications and suggests redistribution or promotion</li>
+<li><b>Batch Recall Analysis:</b> Instant identification of affected stock across all locations</li>
+</ul>
+
+<h3>Operational Analytics &amp; Reporting</h3>
+<ul>
+<li><b>Predictive KPI Alerts:</b> Alerts when metrics trend toward threshold breaches before they occur</li>
+<li><b>Root Cause Analysis:</b> Correlates multiple data sources to identify performance dip causes</li>
+<li><b>Natural Language Reporting:</b> AI-generated narrative reports from operational data</li>
+<li><b>Conversational Analytics:</b> Query data using natural language</li>
+</ul>
+
+<h3>Compliance &amp; Regulatory AI</h3>
+<ul>
+<li><b>Automated Compliance Monitoring:</b> Flags when configurations may need updates for regulatory changes</li>
+<li><b>Audit Trail Intelligence:</b> Proactive identification of compliance gaps before external audits</li>
+<li><b>HIMSS/JCI Gap Analysis:</b> Continuous evaluation against accreditation requirements</li>
+</ul>
+
+<h3>Smart Integration Engine</h3>
+<ul>
+<li><b>Message Transformation Learning:</b> AI learns HL7/FHIR mapping patterns for new endpoints</li>
+<li><b>Integration Health Monitoring:</b> Predicts interface failures from latency and error patterns</li>
+<li><b>Data Quality Scoring:</b> Scores incoming data quality from HIS/ERP systems</li>
+</ul>
+
+<hr>
+
+<!-- ==================== OSSI PARTNERSHIP ==================== -->
+<h2>5. Strategic AI Partnership</h2>
+
+<h3>PharmaFlow&#8482; &times; OSSI &mdash; Medical Data Governance&reg; (MDG&reg;)</h3>
+<p class="badge">Partnership</p>
+
+<p>FutureGate Healthcare Solutions has entered a strategic partnership with OSSI to add AI capabilities to the PharmaFlow&#8482; platform, leveraging OSSI&rsquo;s latest technologies in this domain.</p>
+
+<p>The partnership is built on a foundation of trusted, regulated data through OSSI&rsquo;s Medical Data Governance&reg; (MDG&reg;) platform &mdash; enabling smarter, safer, and more efficient dispensing and supply chain management across outpatient and inpatient settings.</p>
+
+<table class="stats">
+<tr>
+<td><span class="stat">99.9%</span><br><span class="stat-label">Clinical data captured</span></td>
+<td><span class="stat">Trusted</span><br><span class="stat-label">Regulated &amp; compliant data</span></td>
+<td><span class="stat">AI-Ready</span><br><span class="stat-label">Powering intelligent decisions</span></td>
+</tr>
+</table>
+
+<hr>
+
+<!-- ==================== GOVERNANCE ==================== -->
+<h2>6. AI Governance Framework</h2>
+
+<p>AI optimizes operations&mdash;never bypasses governance or pharmacist oversight. All AI recommendations require human approval for clinical decisions.</p>
+
+<h3>Core Principles</h3>
+
+<h4>Human-in-the-Loop</h4>
+<p>AI suggests &mdash; humans decide. Pharmacist oversight always maintained.</p>
+
+<h4>Explainability</h4>
+<p>Every AI decision is explainable with confidence scores and contributing factors.</p>
+
+<h4>Auditability</h4>
+<p>Complete audit trails with immutable decision logs and model version tracking.</p>
+
+<h3>Governance Pillars</h3>
+<ul>
+<li><b>Bias Monitoring:</b> Continuous fairness audits</li>
+<li><b>Data Privacy:</b> Anonymization &amp; HIPAA compliance</li>
+<li><b>Fail-Safe Design:</b> Graceful degradation &amp; manual fallback</li>
+<li><b>Model Lifecycle:</b> Versioning, A/B testing, drift detection</li>
+</ul>
+
+<hr>
+
+<p class="cta">Make Your Pharmacy Smarter. Automated. Future-Ready.</p>
+<p class="cta-sub">Enterprise engagement. Professional inquiry only.</p>
+
+<hr>
+<p style="font-size:9pt; color:#999;">&copy; 2026 FutureGate Software S.L., Spain. All rights reserved. PharmaFlow&#8482; and PDM&#8482; are registered trademarks.</p>
+
+</body>
+</html>
