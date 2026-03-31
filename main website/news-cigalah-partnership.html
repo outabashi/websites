@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/gates Logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clients - FutureGate Healthcare Solutions</title>
-    <meta name="description" content="Leading healthcare institutions across the MENA region trust FutureGate Healthcare Solutions for pharmacy automation, robotics, and digital health.">
-    <meta name="keywords" content="FutureGate clients, healthcare clients MENA, hospital automation clients, pharmacy automation clients, FutureGate Healthcare Solutions">
-    <meta property="og:title" content="Clients - FutureGate Healthcare Solutions">
-    <meta property="og:description" content="Leading healthcare institutions across the MENA region trust FutureGate Healthcare Solutions.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/fghc-logo.png">
+    <title>FutureGate & Cigalah Group Partner to Expand Healthcare Technology Across Saudi Arabia - FutureGate Healthcare Solutions</title>
+    <meta name="description" content="FutureGate Healthcare Solutions and Cigalah Group announce a strategic partnership to expand pharmacy automation and AI-ready digital health infrastructure across Saudi Arabia, aligned with Vision 2030.">
+    <meta name="keywords" content="FutureGate, Cigalah Group, OSSI, Saudi Arabia, Vision 2030, pharmacy automation, digital health, NPHIES, Wasfaty, Tatmeen, healthcare technology">
+    <meta property="og:title" content="FutureGate & Cigalah Group Partner to Expand Healthcare Technology Across Saudi Arabia">
+    <meta property="og:description" content="Strategic partnership to expand pharmacy automation and AI-ready digital health infrastructure across Saudi Arabia.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="images/news/Cigalag partnership/1.jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Clients - FutureGate Healthcare Solutions">
-    <meta name="twitter:description" content="Leading healthcare institutions across the MENA region trust FutureGate Healthcare Solutions.">
+    <meta name="twitter:title" content="FutureGate & Cigalah Group Partner to Expand Healthcare Technology Across Saudi Arabia">
+    <meta name="twitter:description" content="Strategic partnership to expand pharmacy automation and AI-ready digital health infrastructure across Saudi Arabia.">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -70,6 +70,12 @@
         .mega-dept { color: #4B5563; border-right: 2px solid transparent; }
         .mega-dept:hover { background: #EFF6FF; color: #2563EB; }
         .mega-dept.active { background: #EFF6FF; color: #2563EB; font-weight: 600; border-right-color: #2563EB; }
+        /* Lightbox */
+        .lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .lightbox-overlay.active { opacity: 1; visibility: visible; }
+        .lightbox-overlay img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 0.75rem; box-shadow: 0 25px 50px rgba(0,0,0,0.5); pointer-events: auto; }
+        .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; width: 2.5rem; height: 2.5rem; background: rgba(255,255,255,0.15); border: none; border-radius: 50%; color: white; font-size: 1.25rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .lightbox-close:hover { background: rgba(255,255,255,0.3); }
     </style>
 </head>
 <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="bg-white text-bodyText antialiased">
@@ -127,8 +133,8 @@
                         </div>
                     </div>
                     <a href="partners.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Partners</a>
-                    <a href="clients.html" class="nav-link text-primary font-semibold px-3 py-2 text-sm">Clients</a>
-                    <a href="newsroom.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Newsroom</a>
+                    <a href="clients.html" class="nav-link text-bodyText hover:text-primary px-3 py-2 text-sm font-medium">Clients</a>
+                    <a href="newsroom.html" class="nav-link text-primary font-semibold px-3 py-2 text-sm">Newsroom</a>
                     <a href="contact.html" class="ml-4 inline-flex items-center px-5 py-2.5 bg-primary hover:bg-blue-800 text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
                 </div>
                 <button id="menuBtn" class="lg:hidden text-bodyText p-2">
@@ -173,161 +179,113 @@
                     </div>
                 </div>
                 <a href="partners.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Partners</a>
-                <a href="clients.html" class="text-primary font-semibold text-base py-2 border-b border-gray-100">Clients</a>
-                <a href="newsroom.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Newsroom</a>
+                <a href="clients.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Clients</a>
+                <a href="newsroom.html" class="text-primary font-semibold text-base py-2 border-b border-gray-100">Newsroom</a>
                 <a href="contact.html" class="mt-2 inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-blue-800 text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="gradient-hero pt-32 pb-12 lg:pt-40 lg:pb-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, white 1px, transparent 1px); background-size: 40px 40px;"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-4">Trusted Partners in Healthcare</p>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">Our Clients</h1>
-                <p class="text-xl text-blue-100 max-w-2xl">Leading healthcare institutions across the MENA region trust FutureGate Healthcare Solutions.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted By — Logo Grid -->
-    <section class="py-12 lg:py-16 bg-white">
+    <!-- Breadcrumb -->
+    <section class="pt-24 lg:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Trusted By</p>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-darkText">Healthcare Leaders Across the Region</h2>
-                <p class="mt-4 text-lg text-bodyText max-w-2xl mx-auto">From government ministries to leading private hospitals, our solutions power healthcare excellence.</p>
-            </div>
+            <nav class="flex items-center text-sm text-mutedText">
+                <a href="newsroom.html" class="hover:text-primary transition-colors">Newsroom</a>
+                <svg class="w-4 h-4 mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+                <span class="text-bodyText">Article</span>
+            </nav>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 scroll-reveal">
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/mohp-uae.png" alt="Ministry of Health and Prevention - UAE" class="max-h-28 max-w-[80%] object-contain">
+    <!-- Hero Image -->
+    <section class="pb-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal">
+                <img src="images/news/Cigalag partnership/1.jpeg" alt="Partnership signing photo showing two executives shaking hands with FutureGate, Cigalah Group, and OSSI logos on screen behind them" class="w-full max-h-[320px] object-contain bg-gray-50 rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-12 lg:py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="scroll-reveal">
+                <!-- Date -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1.5 rounded-full">February 2026</span>
                 </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/Saudi_Ministry_of_Health.jpg" alt="Saudi Ministry of Health" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/kfmc.png" alt="King Fahad Medical City" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/hamad.png" alt="Hamad Medical Corporation" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/al-amiri.jpg" alt="Al Amiri Hospital" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/zayed.png" alt="Zayed Military Hospital" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/hospital-57357.png" alt="Children's Cancer Hospital Egypt 57357" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/al-mouwasat.png" alt="Al Mouwasat Hospitals" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/fakeeh.png" alt="Dr. Soliman Fakeeh Hospital" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/almoosa.png" alt="Almoosa Specialist Hospital" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/king-fahd-jazan.jpg" alt="King Fahd Central Hospital Jazan" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/Aysha hospital.png" alt="Aysha Hospital" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/PSMMC.jpg" alt="Prince Sultan Military Medical City" class="max-h-28 max-w-[80%] object-contain">
-                </div>
-                <div class="bg-white rounded-xl p-6 border border-gray-200 flex items-center justify-center h-36 card-hover">
-                    <img src="images/clients/pscc.jpg" alt="Prince Sultan Cardiac Center" class="max-h-28 max-w-[80%] object-contain">
+
+                <!-- Title -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-darkText leading-tight mb-8">FutureGate &amp; Cigalah Group Partner to Expand Healthcare Technology Across Saudi Arabia</h1>
+
+                <!-- Article Body -->
+                <div class="prose prose-lg max-w-none space-y-6 text-bodyText leading-relaxed">
+                    <p class="text-lg">FutureGate Healthcare Solutions has signed an exclusive distribution agreement with Cigalah Digital Solutions to bring pharmacy automation and digital health solutions to Saudi Arabia, aligned with the Kingdom&rsquo;s Vision 2030 healthcare transformation.</p>
+
+                    <p>The partnership covers two solution areas:</p>
+
+                    <ul class="space-y-4 ml-1">
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-50 text-primary font-bold text-sm flex items-center justify-center mt-0.5">1</span>
+                            <span><strong class="text-darkText">PharmaFlow&trade; Platform</strong> &mdash; A comprehensive pharmacy management platform that orchestrates medication workflows across outpatient and inpatient settings, including eRx dispensing, inpatient pharmacy management, self-service robotic pharmacy (PDM&trade;), clinical decision support, and AI-driven operational intelligence &mdash; with seamless integration into Saudi national health platforms.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-50 text-primary font-bold text-sm flex items-center justify-center mt-0.5">2</span>
+                            <span><strong class="text-darkText">OSSI Remote Monitoring &amp; AI Infrastructure</strong> &mdash; Vendor-agnostic remote patient monitoring, TeleICU, ambulance telehealth, and AI-ready medical data governance &mdash; connecting 90%+ of ICU devices across manufacturers and capturing 99.9% of clinical data.</span>
+                        </li>
+                    </ul>
+
+                    <blockquote class="border-l-4 border-primary bg-accentBg2 rounded-r-xl px-6 py-5 my-8">
+                        <p class="text-darkText font-medium italic text-lg">&ldquo;Together, we are building the infrastructure that will power the next generation of patient care in Saudi Arabia.&rdquo;</p>
+                    </blockquote>
+
+                    <p>The agreement strengthens FutureGate&rsquo;s presence in the Saudi market through Cigalah&rsquo;s established local expertise and distribution network, accelerating the deployment of intelligent healthcare solutions across the Kingdom.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Clients — EHS -->
+    <!-- Photo Gallery -->
     <section class="py-12 lg:py-16 bg-lightBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Featured Clients</p>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-darkText">Multi-Facility Partnerships</h2>
+            <div class="text-center mb-10 scroll-reveal">
+                <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-3">Event Gallery</p>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-darkText">Photos from the Partnership Signing</h2>
             </div>
-
-            <!-- EHS Card -->
-            <div class="bg-white border border-gray-200 rounded-2xl p-8 lg:p-10 card-hover scroll-reveal mb-8">
-                <div class="flex flex-col items-center text-center mb-8">
-                    <img src="images/clients/EHS-logo.jpeg" alt="Emirates Health Services" class="h-40 max-w-[280px] object-contain mb-6">
-                    <h3 class="text-2xl font-bold text-darkText">Emirates Health Services (EHS)</h3>
-                    <p class="text-bodyText mt-2 max-w-xl">A network of leading hospitals under the Emirates Health Services establishment, serving communities across the UAE.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="scroll-reveal cursor-pointer gallery-img" data-src="images/news/Cigalag partnership/1.jpeg">
+                    <img src="images/news/Cigalag partnership/1.jpeg" alt="Partnership signing — FutureGate and Cigalah Group" class="w-full max-h-[280px] object-contain bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <p class="text-sm text-mutedText mt-3 text-center">Partnership signing &mdash; FutureGate and Cigalah Group</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Al Fujairah Hospital</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Ibrahim Obaidullah Hospital</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Abdullah bin Omran Hospital</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Al Qassimi Hospital</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Al Qassimi Women Hospital</span>
-                    </div>
+                <div class="scroll-reveal cursor-pointer gallery-img" data-src="images/news/Cigalag partnership/2.jpeg">
+                    <img src="images/news/Cigalag partnership/2.jpeg" alt="FGHC, Cigalah Group, and OSSI leadership team" class="w-full max-h-[280px] object-contain bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <p class="text-sm text-mutedText mt-3 text-center">FGHC, Cigalah Group, and OSSI leadership team</p>
                 </div>
-            </div>
-
-            <!-- MODHS Card -->
-            <div class="bg-white border border-gray-200 rounded-2xl p-8 lg:p-10 card-hover scroll-reveal">
-                <div class="flex flex-col items-center text-center mb-8">
-                    <img src="images/clients/modhs_logo.jfif" alt="Ministry of Defence Health Services" class="h-32 object-contain mb-6">
-                    <h3 class="text-2xl font-bold text-darkText">Ministry of Defence Health Services (MODHS)</h3>
-                    <p class="text-bodyText mt-2 max-w-xl">The healthcare arm of the Saudi Ministry of Defence, operating military hospitals and health centers across the Kingdom.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Prince Sultan Military Medical City (PSMMC)</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Al Wazarat Health Center</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Al Kharj Military Hospital</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-accentBg2 rounded-lg">
-                        <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span class="text-sm font-medium text-darkText">Prince Sultan Cardiac Center (PSCC)</span>
-                    </div>
+                <div class="scroll-reveal cursor-pointer gallery-img" data-src="images/news/Cigalag partnership/3.jpeg">
+                    <img src="images/news/Cigalag partnership/3.jpeg" alt="FGHC and OSSI team — The Bridge to Regulated Intelligence" class="w-full max-h-[280px] object-contain bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <p class="text-sm text-mutedText mt-3 text-center">FGHC and OSSI team &mdash; The Bridge to Regulated Intelligence</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-12 lg:py-16 gradient-hero relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 30% 50%, white, transparent 70%);"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 scroll-reveal">
-            <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6">Ready to Transform Your Healthcare Operations?</h2>
-            <p class="text-lg text-blue-100 mb-10 max-w-2xl mx-auto">Join the leading healthcare institutions across the MENA region that trust FutureGate Healthcare Solutions to deliver innovative automation, robotics, and digital health solutions.</p>
-            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-primary hover:text-blue-800 font-bold text-base rounded-lg transition-all shadow-lg hover:shadow-xl group">
-                Contact Us
-                <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    <!-- Back to Newsroom -->
+    <section class="py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+            <a href="newsroom.html" class="inline-flex items-center px-8 py-4 bg-primary hover:bg-blue-800 text-white font-bold text-base rounded-lg transition-all shadow-lg hover:shadow-xl group">
+                <svg class="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+                Back to Newsroom
             </a>
         </div>
     </section>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button class="lightbox-close" id="lightboxClose">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <img id="lightboxImg" src="" alt="Enlarged photo">
+    </div>
 
     <!-- Footer -->
     <footer class="bg-navDark">
@@ -417,6 +375,21 @@
                 if (panel) panel.classList.remove('hidden');
             });
         });
+        // Lightbox
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxClose = document.getElementById('lightboxClose');
+        document.querySelectorAll('.gallery-img').forEach(function(el) {
+            el.addEventListener('click', function() {
+                var src = this.getAttribute('data-src');
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+            });
+        });
+        function closeLightbox() { lightbox.classList.remove('active'); lightboxImg.src = ''; }
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
     </script>
 </body>
 </html>
