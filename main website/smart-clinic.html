@@ -207,25 +207,29 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
-        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 bottom-0 w-72 bg-white border-l border-gray-200 lg:hidden z-50 overflow-y-auto" style="-webkit-overflow-scrolling: touch; overscroll-behavior: contain;">
-            <div class="flex justify-end p-4">
-                <button id="closeMenu" class="text-bodyText p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
-            </div>
-            <div class="flex flex-col px-6 space-y-4 pb-8">
-                <a href="index.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Home</a>
-                <div class="py-2 border-b border-gray-100">
-                    <p class="text-darkText text-base font-medium">About Us</p>
-                    <div class="pl-4 mt-2 space-y-2">
-                        <a href="about.html" class="block text-bodyText hover:text-primary text-sm">Company Overview</a>
-                        <a href="ceo-message.html" class="block text-bodyText hover:text-primary text-sm">Message from CEO</a>
-                        <a href="careers.html" class="block text-bodyText hover:text-primary text-sm">Careers</a>
-                    </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 bottom-0 w-72 bg-white border-l border-gray-200 lg:hidden z-50 overflow-y-auto" style="-webkit-overflow-scrolling: touch; overscroll-behavior: contain;">
+        <div class="flex justify-end p-4">
+            <button id="closeMenu" class="text-bodyText p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+        </div>
+        <div class="flex flex-col px-6 space-y-4 pb-8">
+            <a href="index.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Home</a>
+            <div class="py-2 border-b border-gray-100">
+                <p class="text-darkText text-base font-medium">About Us</p>
+                <div class="pl-4 mt-2 space-y-2">
+                    <a href="about.html" class="block text-bodyText hover:text-primary text-sm">Company Overview</a>
+                    <a href="ceo-message.html" class="block text-bodyText hover:text-primary text-sm">Message from CEO</a>
+                    <a href="careers.html" class="block text-bodyText hover:text-primary text-sm">Careers</a>
                 </div>
-                <div class="py-2 border-b border-gray-100">
-                    <p class="text-primary text-base font-medium">Solutions</p>
-                    <div class="pl-4 mt-2 space-y-2">
+            </div>
+            <div class="py-2 border-b border-gray-100">
+                <p class="text-primary text-base font-medium">Solutions</p>
+                <div class="pl-4 mt-2 space-y-2">
                     <p class="text-[10px] font-bold text-blue-600 uppercase tracking-wider pt-2 pb-1">Pharmacy</p>
                     <a href="pharmaflow.html" class="block text-gray-600 hover:text-blue-600 text-sm py-1.5 transition-colors pl-2">PharmaFlow&trade; Platform</a>
                     <a href="pharmacy-automation.html" class="block text-gray-600 hover:text-blue-600 text-sm py-1.5 transition-colors pl-2">Pharmacy Automation</a>
@@ -244,15 +248,14 @@
                     <a href="mdg.html" class="block text-gray-600 hover:text-blue-600 text-sm py-1.5 transition-colors pl-2">OSSI MDG&reg; Data Governance</a>
                     <a href="medical-device-connectivity.html" class="block text-gray-600 hover:text-blue-600 text-sm py-1.5 transition-colors pl-2">Medical Device Data Connectivity</a>
                     <a href="ossi-solutions.html" class="block text-bodyText hover:text-primary text-sm py-1.5 transition-colors pl-2">OSSI Connect AI Insight&trade;</a>
-                    </div>
                 </div>
-                <a href="partners.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Partners</a>
-                <a href="clients.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Clients</a>
-                <a href="newsroom.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Newsroom</a>
-                <a href="contact.html" class="mt-2 inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-blue-800 text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
             </div>
+            <a href="partners.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Partners</a>
+            <a href="clients.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Clients</a>
+            <a href="newsroom.html" class="text-bodyText hover:text-primary text-base font-medium py-2 border-b border-gray-100">Newsroom</a>
+            <a href="contact.html" class="mt-2 inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-blue-800 text-white font-semibold text-sm rounded-lg transition-colors">Contact Us</a>
         </div>
-    </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden" style="background: url('images/smart clinic.jpg') center/cover no-repeat;"><div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/70 via-[#0F172A]/60 to-[#1D4ED8]/40"></div>
