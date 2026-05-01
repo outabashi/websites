@@ -77,13 +77,20 @@ $body = "
 </html>
 ";
 
-$headers = "MIME-Version: 1.0\r\n";
+// Use info@ as the From address (must be a real mailbox on Bluehost)
+$headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$headers .= "From: FutureGate Website <noreply@futuregatehc.com>\r\n";
-$headers .= "Reply-To: {$name} <{$email}>\r\n";
+$headers .= "From: info@futuregatehc.com\r\n";
+$headers .= "Reply-To: {$email}\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-// Send email
-$sent = mail($to, $subject, $body, $headers);
+// Send email with -f flag for Bluehost envelope sender
+$sent = mail($to, $subject, $body, $headers, '-f info@futuregatehc.com');
+
+// Log result for debugging
+$logFile = __DIR__ . '/form-log.txt';
+$logEntry = date('Y-m-d H:i:s') . " | Name: {$name} | Email: {$email} | Sent: " . ($sent ? 'YES' : 'NO') . " | Error: " . error_get_last()['message'] ?? 'none' . "\n";
+file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
 
 if ($sent) {
     header('Location: contact.html?submitted=true');
