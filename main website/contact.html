@@ -201,14 +201,19 @@
 
                 <!-- Left Column: Contact Form -->
                 <div class="scroll-reveal">
+                    <div id="successMsg" class="hidden bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <h3 class="text-lg font-bold text-green-800">Message Sent Successfully!</h3>
+                        </div>
+                        <p class="text-green-700 text-sm">Thank you for contacting us. Our team will get back to you within one business day.</p>
+                    </div>
                     <h2 class="text-2xl lg:text-3xl font-extrabold text-darkText mb-2">Send Us a Message</h2>
                     <p class="text-bodyText mb-8">Fill out the form below and our team will get back to you within one business day.</p>
 
-                    <form action="https://formsubmit.co/info@futuregatehc.com" method="POST" class="space-y-5" onsubmit="if(!this.querySelectorAll('input[name=&quot;solutions[]&quot;]:checked').length){document.getElementById('solutions-error').classList.remove('hidden');return false;}">
-                        <!-- Hidden fields -->
-                        <input type="hidden" name="_subject" value="New Contact from futuregatehc.com">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form action="submit-form.php" method="POST" class="space-y-5" onsubmit="if(!this.querySelectorAll('input[name=&quot;solutions[]&quot;]:checked').length){document.getElementById('solutions-error').classList.remove('hidden');return false;}">
+                        <!-- Honeypot spam protection -->
+                        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
 
                         <!-- Full Name -->
                         <div>
@@ -395,6 +400,17 @@
 
     <script>
         if (window.top !== window.self) { window.top.location = window.self.location; }
+        if (window.location.search.includes('submitted=true')) {
+            document.getElementById('successMsg').classList.remove('hidden');
+            window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+        }
+        if (window.location.search.includes('error=')) {
+            var errEl = document.createElement('div');
+            errEl.className = 'bg-red-50 border border-red-200 rounded-xl p-6 mb-6';
+            errEl.innerHTML = '<div class="flex items-center gap-3"><svg class="w-6 h-6 text-red-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><p class="text-red-700 text-sm font-medium">Something went wrong. Please try again or email us directly at info@futuregatehc.com</p></div>';
+            var form = document.querySelector('form');
+            form.parentNode.insertBefore(errEl, form);
+        }
         const menuBtn = document.getElementById('menuBtn');
         const closeMenu = document.getElementById('closeMenu');
         const mobileMenu = document.getElementById('mobileMenu');
